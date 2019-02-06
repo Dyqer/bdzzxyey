@@ -1,0 +1,36 @@
+{%lcmx_danye_show set="列表名:show,编号:GET[id],栏目:GET[lanmu]"%}
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="{%$show.description%}">
+	<meta name="keywords" content="{%$show.keywords%}">
+	<title>{%$web_name%}</title>
+	<link rel="stylesheet" href="{%$URL%}style.css">
+	<script type="text/javascript" src="{%$URL%}js/jquery-1.11.3.js"></script> 
+</head>
+<body>
+	{%include file='herder.htm'%}
+	<div class="currency_fl">
+		<div class="currency_bor">当前位置：<a href="index.php">首页</a> > <a href="index.php?p=about&lanmu={%$show.lanmu%}">{%$show.lanmuname%}</a> > <a href="index.php?p=about&lanmu={%$show.lanmu%}&id={%$show.lc_id%}">{%$show.lc_title%}</a></div>
+	</div>
+	<div class="conver">
+			<div class="Title">
+				<div class="TitleMaxSize">{%$show.lc_title%}</div>
+				<div class="TitleMinSize">about us</div>
+			</div>
+			<div class="currency_type">
+				{%lcmx_danye_type set="列表名:type,所属栏目:GET[lanmu]"%}
+				{%foreach from=$type item=list%}
+					<a href="index.php?p=about&lanmu={%$list.lanmu%}&id={%$list.lc_id%}" class="currency_type_lanmu">{%$list.lc_title%}</a>
+				{%/foreach%}
+			</div>
+			<div class="about_conver">
+						{%$show.con%}
+			</div>
+			<div class="cl"></div>
+	</div>
+	<div class="cl"></div>
+	{%include file='bot.htm'%}
+</body>
+</html>

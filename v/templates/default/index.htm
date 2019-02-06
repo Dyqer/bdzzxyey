@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)" name="viewport">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="telephone=no" name="format-detection">
+<title>{%$web_name%}</title>
+<link type="text/css" rel="stylesheet" href="{%$URL%}style.css">
+<script src="{%$URL%}js/jquery-1.9.0.min.js"></script>
+<script src="{%$URL%}js/jquery.touchslider.js"></script>
+<script src="{%$URL%}js/js.js"></script>
+</head>
+<body>
+<div class="box_mainBody">
+  <div class="box_main">{%include file="index-head.htm"%} <!--公司简介-->
+    <section>
+      <div class="index_title"><a href="index.php?p=about&id=1&lanmu=3"><span class="title">公司简介</span></a>
+        <div class="more"></div>
+      </div>
+      <div class="index_jianjie_con"> {%lcmx_v_touch_show set="列表名:touch,编号:1"%}{%$touch.con%}</div>
+    </section>
+    <!--公司简介结束--> <!--推荐案例-->
+    <section>
+      <div class="index_title"><a href="index.php?p=products_list&lanmu=2"><span class="title">推荐案例</span></a>
+        <div class="more"></div>
+      </div>
+      <div class="index_pro_con">
+        <ul>
+          {%lcmx_v_products_list set="列表名:products,显示数目:4,栏目:2,标题长度:30"%}
+          {%foreach from=$products item=list%}
+          <li>
+            <div class="index_Pro_left"><a href="index.php?p=products_show&id={%$list.id%}"><img src="{%$list.pic%}"></a></div>
+            <div class="index_Pro_content">
+              <h3><span>{%$list.title%}</span></h3>
+              <p>{%$list.description%}</p>
+              <div class="yijian">
+                <div class="yijian6"><a href="index.php?p=products_show&id={%$list.id%}">查看详情</a></div>
+              </div>
+            </div>
+          </li>
+          {%/foreach%}
+        </ul>
+      </div>
+    </section>
+    <!--推荐案例结束--> <!--一键沟通--> {%include file="yijian.htm"%} <!--一键沟通结束--> 
+    
+    {%include file="foot.htm"%}</div>
+</div>
+</body>
+</html>

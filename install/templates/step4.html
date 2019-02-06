@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<title>龙采MX 4.0</title>
+<meta charset="utf-8">
+<link href="templates/resource/css/base.css" rel="stylesheet" type="text/css">
+<script src="templates/resource/js/jquery-1.7.1.min.js"></script>
+<!--[if IE 6]>
+    <script src="templates/resource/js/DD_belatedPNG_0.0.8a-min.js" type="text/javascript"></script>
+    <script  type="text/javascript">
+        DD_belatedPNG.fix('#logo, .pageTitle, .setupNav, .setupL, .setupR, .setupNav li span, .bton, #bgBanner, .progressBarOver, #progressNum, .progressR, background');
+    </script>
+<![endif]-->
+<script type="text/javascript">
+$(function($){
+	var progressMove=function(s,b){
+		this._s=s;
+		this._b=b;
+		this.change=function(s){
+			$("#progress").css("width",s+"%");
+			$("#progressNum").html(s+"%");
+		}
+		this.auto=function(){
+			change(_s);
+			if(_s>=100){
+				clearInterval(t);
+				$("#progressNum").html("完成！");
+			}else if(_s>=_b){
+				clearInterval(t);
+			}else{
+				_s++
+			}
+		}
+		var t=setInterval(auto,30);
+	}
+	progressMove(0,100);
+});
+</script>
+</head>
+<body>
+<div class="wrapMain"><!--头部-->
+  <div class="header midWrap">
+    <h1 id="logo" title="龙采MX 4.0">龙采MX 4.0</h1>
+    <h2 class="pageTitle">龙采MX 4.0安装向导</h2>
+  </div>
+  <!--头部End--> 
+  <!--导航-->
+  <div class="setupNavBox midWrap">
+    <div class="setupL"></div>
+    <ul class="setupNav">
+      <li><span></span> <em>许可协议</em></li>
+      <li><span></span> <em>环境检测</em></li>
+      <li><span></span> <em>参数配置</em></li>
+      <li><span class="up"></span> <em>开始安装</em></li>
+      <li><span></span> <em>安装完成</em></li>
+    </ul>
+    <div class="setupR"></div>
+  </div>
+  <!--导航End-->
+  <div class="he55"></div>
+  <!--进度条-->
+  <div class="progressBarBox midWrap">
+    <div class="progressBar">
+      <div class="progressBarOver"></div>
+      <div id="progress" style="">
+        <div class="progressR"></div>
+        <div id="progressNum"></div>
+      </div>
+    </div>
+  </div>
+  <!--进度条End--> 
+  <!--背景切换-->
+  <div id="bgBanner" style="background-image: url(resource/images/bg01_03.png)"></div>
+  <!--背景切换End--> <!--按钮-->
+  <div class="midWrap">
+    <div class="btonWrap"><a class="bton fl" href="option.html">上一步（N）</a> <a class="bton fr" href="license.html">回首页（H）</a></div>
+  </div>
+  <!--按钮End--></div>
+</body>
+</html>

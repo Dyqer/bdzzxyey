@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="{%$show.description%}">
+	<meta name="keywords" content="{%$show.keywords%}">
+	<title>{%$web_name%}</title>
+	<link rel="stylesheet" href="{%$URL%}style.css">
+	<script type="text/javascript" src="{%$URL%}js/jquery-1.11.3.js"></script> 
+</head>
+<body>
+	{%include file='herder.htm'%}
+	<div class="currency_fl">
+	<div class="currency_bor">当前位置：<a href="index.php">首页</a> > <a href="index.php?p=job_list&lanmu=5">园长寄语</a> > <a href="index.php?p=job_list&lanmu=5">园长寄语</a></div>
+	</div>
+	<div class="conver">
+			<div class="Title">
+				<div class="TitleMaxSize">园长寄语</div>
+				<div class="TitleMinSize">about us</div>
+			</div>
+			<!-- <div class="currency_type">
+					<a href="index.php?p=job_list&lanmu=5" class="currency_type_lanmu">人才招聘</a>
+					<a href="index.php?p=jianli" class="currency_type_lanmu">提交简历</a>
+			</div> -->
+			<div class="job_conver">
+				{%lcmx_job_list set="列表名:job,显示数目:4,标题长度:80,类别:GET[c_id],分页显示:1,简介长度:81"%}
+          		{%foreach from=$job item=list key=k%}
+
+					{%if $k%2==0%}
+					<a href="index.php?p=job_show&zhiwei={%$list.lc_title%}&id={%$list.lc_id%}" class="wadawd">
+					<div class="job_conve">
+						<div class="jo_title">{%$list.lc_title%}</div>
+						{%$list.lc_content%}
+					</div>
+					</a>
+					{%else%}
+					<a href="index.php?p=job_show&zhiwei={%$list.lc_title%}&id={%$list.lc_id%}" class="wadawd"><div class="job_conve" style="margin-left:10px;">
+						<div class="jo_title">{%$list.lc_title%}</div>
+							{%$list.lc_content%}
+					</div></a>
+					{%/if%}
+					
+
+				{%/foreach%}
+					<!-- <div class="job_conve"></div>
+					<div class="job_conve"></div>
+					<div class="job_conve"></div> -->
+					<div class="cl"></div>
+					<div class="main_page" id="page" style="margin-bottom:10px;"><ul>{%$page%}</ul></div>
+			</div>
+			
+	</div>
+		<div class="cl"></div>
+	{%include file='bot.htm'%}
+</body>
+</html>

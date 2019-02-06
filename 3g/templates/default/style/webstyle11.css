@@ -1,0 +1,189 @@
+@charset "utf-8";
+/* CSS Document */
+body{margin:0;padding:0;font-size:14px;font-family:"微软雅黑";-webkit-text-size-adjust:none;color:#000;}
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,p{margin:0;padding:0;}
+img{border:0;vertical-align:bottom;width:100%;}
+ul,li{list-style-type:none;}
+a{color:#000;text-decoration:none;}
+.tc{text-align:center;}.tl{text-align:left;}.tr{text-align:right;}
+.fl{float:left;}.fr{float:right;}.cl{clear:both;}.fb{font-weight:bold;}
+input[type="text"]:focus,input[type="password"]:focus,textarea:focus{outline:none;}
+
+/*header*/
+.logo{position:relative;}
+.search{width:7.8%;position:absolute;left:3%;top:20%;}
+.search{width:30px;position:absolute;left:2%;top:10px;z-index:8;}
+
+/*index*/
+.top_list{clear:both;padding:0 0 3% 0;}
+.top_list li{width:46%;float:left;padding:2% 0 0 2.6%;position:relative;}
+.top_list li a{color:#fff;}
+.top_list_t{width:95%;position:absolute;top:20%;right:5%;color:#fff;font-size:16px;text-align:right;}
+.news{background:url(../images/bg1.jpg) no-repeat center top;background-size:cover;padding:0 2% 2% 2%;}
+.news_title{color:#fff;font-size:20px;text-align:center;padding:3% 0;}
+.news li{background:#de172e;padding:3% 2%;color:#fff;font-size:15px;text-align:right;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;margin:0 0 3% 0;}
+.news li a{color:#fff;float:left;}
+.news_more{width:40px;height:40px;margin:0 auto;background:#fff;font-size:15px;line-height:40px;text-align:center;border-radius:50%;-moz-border-radius:50%;-webkit-border-radius:50%;}
+.news_more a{color:#000;}
+.product{background:url(../images/bg2.jpg) no-repeat center top;background-size:cover;}
+.pro_title{color:#191919;font-size:20px;text-align:center;padding:4% 0;}
+.pro_nr li{width:44%;float:left;background:#1f2229;text-align:center;margin:0 3% 4% 3%;}
+.pro_text{color:#fff;padding:3%;font-size:16px;}
+.company{padding:0 2% 3% 2%;color:#000;font-size:15px;}
+.com_pic{width:40%;float:left; padding-right:3%;}
+
+
+
+
+/*banner*/
+
+#ban{ margin-top:1px;}
+
+#ban img{ width:100%;}
+
+#banner{}
+
+.swipe{}
+
+.swipe ul{}
+
+#slider{ position:relative; overflow:hidden;}
+
+#slider li{ float:left;}
+
+#pagenavi{ position:absolute; bottom:0; width:100%; z-index:10; text-align:center; padding:10px 0;}
+
+#pagenavi a{ width:12px; height:12px; line-height:99em; background:#FFF; border-radius:90px;margin:0px 2px 0px 2px; overflow:hidden; cursor:pointer; display:inline-block;}
+
+#pagenavi a.active{ background:#2b80af;}
+
+
+
+
+
+
+/*footer*/
+.copyright{color:#222222;font-size:16px;text-align:center;padding:2% 0;}
+.footer{background:url(../images/bg3.jpg) repeat-x center bottom;background-size:cover;}
+.footer li{width:20%;float:left;text-align:center;color:#fff;font-size:20px;padding:2% 0;line-height:30px;}
+.footer li a{color:#fff;}
+.footer li img{width:30px;}
+
+/*main*/
+
+
+
+/*栏目*/
+.lanmu{
+	width:94%;
+	margin-top: 5%;
+	background: url(../images/cp.png);
+	background-size:100% 100%;
+	height:100%;
+margin-left: 3%;
+}
+
+/*图文列表*/
+.index_liebiao{
+	width:94%;
+	padding-top: 2%;
+	padding-bottom:8%; 
+}
+
+.index_liebiao li{
+	float: left;
+	background: #2c2f34;
+	padding:1% 0;
+	margin-bottom:2%;
+	margin-left:1.5%;  
+}
+.index_liebiao a{
+
+	font-size: 100%;
+	color:#fff;
+}
+.products_list{
+	width:94%;
+	padding: 0 3%;
+}
+.products_list li{
+	float: left;
+	width:45%;
+	margin:0 2%;
+	margin-bottom:5%;
+}
+.products_list p{
+	padding: 3% 0;
+	background:#de4e3c;
+	color: #fff;
+}
+/*图文详情*/
+.products_con{
+	width:94%;
+	padding:0 3%;
+	padding-bottom: 3%;
+}
+.products_con p{
+	font-size:100%;
+	color:#de4e3c;
+	padding-bottom: 3%;
+
+}
+.products_con span{
+	font-size:100%;
+	color: #262626;
+}
+
+.list1{
+	width:94%;
+	background: #de172e;
+	padding: 4% 0;
+	margin-top:3%;
+}
+.list1 a{
+	color:#fff;
+	text-align: left;
+}
+.list span{
+	color:#fff;
+	float: right;
+}
+
+/*新闻详情*/
+.news_show_cont{
+	width:94%;
+	padding: 3% 3%;
+
+}
+.news_show_cont p{
+	font-size: 110%;
+	color:#de4e3c;
+	margin-bottom: 2%;
+}
+.news_show_cont span{
+	font-size: 100%;
+	color:#262626;
+}
+
+.cent{
+	width: 100%;
+}
+.cent img{
+	width:100%;
+}
+.cent p{
+	font-size: 100%;
+	color:#262626;
+	margin: 0 3%;
+	width:94%;
+}
+
+
+.box_main {
+	min-width: 320px;
+	max-width: 640px;
+	background: #146bd3;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}

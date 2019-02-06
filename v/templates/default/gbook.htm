@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{%$web_name%}</title>
+<link type="text/css" rel="stylesheet" href="{%$URL%}style.css">
+<script src="{%$URL%}js/jquery-1.9.0.min.js"></script>
+<script src="{%$URL%}js/jquery.touchslider.js"></script>
+<script src="{%$URL%}js/js.js"></script>
+<script type="text/javascript">
+function newgdcode(obj,url) {
+	obj.src = url+ '&time=' + new Date().getTime();//后面传递一个随机参数，否则在IE7和火狐下，不刷新图片
+}
+/*表单数据检查*/
+function check_gbook(){
+	var lc_title=$("#lc_title").val();
+	var lc_content=$("#lc_content").val();
+	var lc_email=$("#lc_email").val();
+	var yzm=$("#yzm").val();
+	if(!lc_title){
+		alert("请填写留言标题！")
+		return false;
+		}
+	if(!lc_email){
+		alert("请填写您的邮箱地址！")
+		return false;
+		}
+	if(!lc_content){
+		alert("请填写您要留的内容！")
+		return false;
+		}
+	if(!yzm){
+		alert("请填写验证码！")
+		return false;
+		}
+	}
+</script>
+</head>
+<body>
+<div class="box_mainBody">
+	<div class="box_main">{%include file="head.htm"%}
+		<div class="sub_title"><span class="title"><a href="index.php">首页</a> > 给我留言</span></div>
+		<div class="danye_con">
+			<form method="post" action="action/gbook_save.php" onSubmit="return check_gbook()">
+				<table width="100%">
+					<tr>
+						<td><input type="tel" id="lc_title" name="lc_title" class="gbookinput" placeholder="您的留言标题"></td>
+					</tr>
+					<tr>
+						<td height="10"></td>
+					</tr>
+					<tr>
+						<td><input type="email" id="lc_email" name="lc_email" class="gbookinput" placeholder="您的邮箱" required></td>
+					</tr>
+					<tr>
+						<td height="10"></td>
+					</tr>
+					<tr>
+						<td><textarea name="lc_content" id="lc_content" cols="" rows="" class="gbooktext" placeholder="您要留的内容"></textarea></td>
+					</tr>
+					<tr>
+						<td height="10"></td>
+					</tr>
+					<tr>
+						<td><input name="yzm" type="text" id="yzm" placeholder="请输入验证码" maxlength="6">
+							<img src="index.php?a=imagecode" alt="看不清楚，换一张" align="absmiddle" onClick="newgdcode(this,this.src)"></td>
+					</tr>
+					<tr>
+						<td height="10"></td>
+					</tr>
+					<tr>
+						<td><input name="提交" type="submit" value="提交" style="margin-left: 0;" class="yijian1"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		{%include file="yijian.htm"%} {%include file="foot.htm"%}</div>
+</div>
+</body>
+</html>

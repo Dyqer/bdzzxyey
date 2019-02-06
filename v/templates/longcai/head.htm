@@ -1,0 +1,34 @@
+<header class="header1">
+  <div class="logo">{%lcmx_v_touch_show set="列表名:touch,编号:1"%}<img src="{%$touch.pic%}" /></div>
+  <div class="tool"> <span class="back"><a href="javascript:history.go(-1)"></a></span> <span class="reload"><a onclick="javascript:window.location.reload()"></a></span> <span class="type"><a id="tubiao"></a></span> </div>
+</header>
+<nav id="nav">
+  <ul>
+    <li><a href="index.php">首页</a></li>
+    {%lcmx_v_lanmu_list set="列表名:lanmu"%}
+    {%if $lanmu%}
+    {%foreach from=$lanmu item=list%}
+    <li> <a href="{%$list.c_link%}">{%$list.title%}</a> </li>
+    {%/foreach%}
+    {%/if%}
+    <div style="padding-bottom:0px" class="clear"></div>
+  </ul>
+</nav>
+<div id="Banner">
+  <ul class="touchslider-viewport">
+    {%lcmx_v_banner_list set="列表名:banner"%}
+    {%if $banner%}
+    {%foreach from=$banner item=list%}
+    <li class="touchslider-item"> <img src="{%$list.pic%}"> </li>
+    {%/foreach%}
+    {%/if%}
+  </ul>
+  <div class="touchslider-nav"> 
+    <!--<a class="touchslider-prev">&lt;</a>--> 
+    <!--<div class="sonpic">
+        <a class="touchslider-nav-item touchslider-nav-item-current"></a>
+        <a class="touchslider-nav-item"></a>
+    </div> --> 
+    <!--<a class="touchslider-next"><span class="touchslider-next-in">&gt;</span></a>--> 
+  </div>
+</div>

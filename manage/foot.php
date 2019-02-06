@@ -1,0 +1,1 @@
+<div id="footer"><a style="color:#333;" href="http://longcai.com" target="_blank">MX营销平台</a></div>

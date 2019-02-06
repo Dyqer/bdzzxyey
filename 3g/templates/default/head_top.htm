@@ -1,0 +1,102 @@
+<script type="text/javascript">
+function check_seachkey(){
+	var key=$("#seach_key").val();
+	if(!key){
+		alert("请输入查询的关键词！！！");
+		return false;
+		}
+	}
+</script>
+<header class="logo">
+  <div class="search"><img src="{%$URL%}images/search.png"></div>
+  <div class="ss">
+    <form action="index.php?p=seach_list" method="post" onSubmit="return check_seachkey()">
+      <input type="text" class="ss_bd" id="seach_key" name="key" placeholder="请输入您要搜索的">
+      <input type="submit" class="ss_btn" value="搜索">
+    </form> 
+  </div>
+  <!--导航 start--> 
+  <!-- <a href="#0" class="cd-nav-trigger">菜单<span class="cd-icon"></span></a>
+  <nav>
+    <ul class="cd-primary-nav">
+    <li><a href="index.php">首页</a></li>
+    {%lcmx_3g_lanmu_list set="列表名:lanmu"%}
+    {%if $lanmu%}
+    {%foreach from=$lanmu item=list%}
+    <li> <a href="{%$list.c_link%}">{%$list.title%}</a> </li>
+    {%/foreach%}
+    {%/if%}
+    </ul>
+  </nav> -->
+ <!--  <div class="cd-overlay-nav"><span></span></div>
+  <div class="cd-overlay-content"><span></span></div> -->
+  <!--导航 end--> 
+  
+  {%lcmx_3g_touch_show set="列表名:touch,编号:1"%}<img src="{%$touch.pic%}" /> </header>
+<div>
+<div><img src="{%$touch.pic%}" /> </div>
+<div id="Banner">
+    	<div class="swipe">
+		<ul id="slider">
+		{%lcmx_3g_banner_list set="列表名:banner"%}
+        {%if $banner%}
+            {%foreach from=$banner item=list%}
+             <li onClick="window.location.href='{%$list.lc_url%}'"><img src="{%$list.pic%}" width="100%" alt=""></li>
+            {%/foreach%}
+        {%/if%}
+        </ul>
+        <div id="pagenavi">
+        {%lcmx_3g_banner_list set="列表名:banner"%}
+        {%if $banner%}
+            {%$q=1%}
+                {%foreach from=$banner item=list%}
+                {%if $q==1%}
+                    <a class="active" href="javascript:void(0);">{%$q%}</a>
+                    {%else%}
+                    <a class="" href="javascript:void(0);">{%$q%}</a>
+                {%/if%}
+            <!--{%$q++%}-->
+        {%/foreach%}
+        {%/if%}
+        </div>
+	</div>
+<script type="text/javascript" src="{%$URL%}js/zVy3.js"></script> 
+<script type="text/javascript" src="{%$URL%}js/zVy5.js"></script> 
+<script type="text/javascript">
+
+var active=0,
+
+	as=document.getElementById('pagenavi').getElementsByTagName('a');	
+
+for(var i=0;i<as.length;i++){
+
+	(function(){
+
+		var j=i;
+
+		as[i].onclick=function(){
+
+			t2.slide(j);
+
+			return false;
+
+		}
+
+	})();
+
+}
+
+var t1=new TouchScroll({id:'wrapper','width':5,'opacity':0.7,color:'#555',minLength:20});
+
+var t2=new TouchSlider({id:'slider', speed:600, timeout:3000, before:function(index){
+
+		as[active].className='';
+
+		active=index;
+
+		as[active].className='active';
+
+	}});
+
+</script>
+    </div></div>

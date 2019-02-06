@@ -1,0 +1,26 @@
+<header class="logo">
+
+  
+  
+  <!--导航 start--> 
+  <a href="#0" class="cd-nav-trigger">菜单<span class="cd-icon"></span></a>
+  <nav>
+    <ul class="cd-primary-nav">
+    
+    <li><a href="index.php">首页</a></li>
+    {%lcmx_3g_lanmu_list set="列表名:lanmu"%}
+    {%if $lanmu%}
+    {%foreach from=$lanmu item=list%}
+    <li> <a href="{%$list.c_link%}">{%$list.title%}</a> </li>
+    {%/foreach%}
+    {%/if%}
+    
+     
+    </ul>
+  </nav>
+  <div class="cd-overlay-nav"><span></span></div>
+  <div class="cd-overlay-content"><span></span></div>
+  <!--导航 end--> 
+  
+  {%lcmx_3g_touch_show set="列表名:touch,编号:1"%}<img src="{%$touch.pic%}" /> </header>
+

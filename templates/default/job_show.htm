@@ -1,0 +1,39 @@
+{%lcmx_job_show set="列表名:show,编号:GET[id],点击量:1"%}
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="{%$show.description%}">
+	<meta name="keywords" content="{%$show.keywords%}">
+	<title>{%$web_name%}</title>
+	<link rel="stylesheet" href="{%$URL%}style.css">
+	<script type="text/javascript" src="{%$URL%}js/jquery-1.11.3.js"></script> 
+</head>
+<body>
+	{%include file='herder.htm'%}
+	<div class="currency_fl">
+		<div class="currency_bor">当前位置：<a href="index.php">首页</a> > <a href="index.php?p=job_list&lanmu=5">园长寄语</a> > <a href="index.php?p=job_list&lanmu=5">园长寄语</a></div>
+	</div>
+	<div class="conver">
+			<!-- <div class="Title">
+				<div class="TitleMaxSize">园长寄语</div>
+				<div class="TitleMinSize">about us</div>
+			</div> -->
+			<div class="currency_type">
+					<a href="index.php?p=job_list&lanmu=5" class="currency_type_lanmu">人才招聘</a>
+					<a href="index.php?p=jianli" class="currency_type_lanmu">提交简历</a>
+			</div>
+			<div class="job_conver1">
+				<div style="font-size:20px;color:#000;">{%$show.lc_title%}</div>
+				{%$show.lc_content%}
+				<div style="color:#282525;"><p>有意者请填写个人简历并提交</p></div>
+				<div class="job_an">
+					<a href="index.php?p=jianli&zhiwei={%$show.lc_title%}"></a>
+				</div>
+			</div>
+			
+	</div>
+	<div class="cl"></div>
+	{%include file='bot.htm'%}
+</body>
+</html>

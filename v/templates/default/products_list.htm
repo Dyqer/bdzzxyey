@@ -1,0 +1,99 @@
+{%lcmx_v_products_type_get set="列表名:tshow,类别:GET[c_id]"%}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{%$web_name%}</title>
+<link type="text/css" rel="stylesheet" href="{%$URL%}style.css">
+<script type="text/javascript" src="{%$URL%}js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="{%$URL%}js/jquery.touchslider.js"></script>
+<script type="text/javascript" src="{%$URL%}js/js.js"></script>
+<script type="text/javascript">
+$(function(){
+		$("#gengduo_button").click(function(){
+			var num=4;//显示个数
+			var page=$("#gengduo_button").attr('page');//第几个分页
+			var nodata=$("#gengduo_button").attr('nodata');//判断是否有数据
+			if(page){
+				page=parseInt(page);
+				}else{
+					page=1;
+					}
+			var type='{%$smarty.get.c_id%}';//新闻所属分类
+			var lanmu='{%$smarty.get.lanmu%}';//新闻所属栏目
+			//$("#test").text("栏目:"+lanmu+"数量:"+num+"类型:"+type+"分页:"+page);
+			if(lanmu){
+				if(nodata!=="no"){
+					$.post("action/products_list_ajax.php",{products_num:num,products_page:page,products_type:type,products_lanmu:lanmu},function(data){
+						if(data){
+							if(data=="2"){
+								alert("没有更多数据了！");
+								}else{
+									if(data=="1"){
+										alert("没有更多数据了！");
+										$("#gengduo_button").attr('nodata','no');
+										}else{
+											$(".products_list").append(data);
+											page=page+1;
+											$("#gengduo_button").attr('page',page)
+											}
+									}
+							}else{
+								alert("网络错误，请稍候重试！")
+								}
+						})
+						}else{
+							alert("没有更多数据了！")
+							}
+				}else{
+					alert("请求参数不正确！");
+					}
+			})
+		})
+</script>
+</script>
+</head>
+
+<body>
+<div class="box_mainBody">
+  <div class="box_main">{%include file="index-head.htm"%}
+    <div id="ceng"
+	style="display: none; width: 100%; height: 100%; z-index: 100; position: absolute; top: 0; right: 0; bottom: 0;">
+      <div id="close"
+	style="width: 55%; background: #444; height: 100%; float: left; background-color: rgba(0, 0, 0, 0.5)"><img src="{%$URL%}img/close.png" style="padding: 15px"></div>
+      <div style="width: 45%; background: #b80b0c; height: 100%; float: left;"
+	class="type">
+        <ul>
+          {%lcmx_v_products_type set="列表名:productstype,所属栏目:GET[lanmu]"%}
+          {%foreach from=$productstype item=list%}
+          <li><a href="index.php?p=products_list&c_id={%$list.c_id%}">{%$list.c_title%}</a></li>
+          {%/foreach%}
+        </ul>
+      </div>
+    </div>
+    <article>
+      <div class="sub_title"><a href="index.php"><span class="title">首页 > {%$tshow.lanmuname%}</span></a></div>
+      <section class="products_list"> 
+      {%lcmx_v_products_list set="列表名:products,显示数目:4,标题长度:20,类别:GET[c_id],栏目:GET[lanmu],分页显示:1"%}
+        {%if $products %}
+        {%foreach from=$products item=list%}
+        <article>
+          <div class="img"><a href="index.php?p=products_show&id={%$list.id%}"><img src="{%$list.pic%}"></a></div>
+          <p class="h9">{%$list.title%}</p>
+          <div class="yijiancon">
+            <div class="yijian6"><a href="index.php?p=products_show&id={%$list.id%}">查看详情</a></div>
+          </div>
+        </article>
+        {%/foreach%} 
+        {%/if%}
+      </section>
+      <div class="sub_more" style="text-align:center">
+          <input name="更多" type="button" id="gengduo_button" page="2" value="显示更多">
+        </div>
+    </article>
+    <!--一键沟通--> {%include file="yijian.htm"%} <!--一键沟通结束--> {%include
+    file="foot.htm"%}</div>
+</div>
+</body>
+</html>

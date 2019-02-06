@@ -1,0 +1,105 @@
+{%lcmx_3g_danye_show set="列表名:show,编号:GET[id],栏目:GET[lanmu]"%}
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link href="{%$URL%}style/webstyle.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="{%$URL%}style/nav.css" />
+<title>{%$LCMX.touch_name%}</title>
+<script src="{%$URL%}js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="{%$URL%}js/velocity.min.js"></script>
+<script type="text/javascript" src="{%$URL%}js/main.js"></script>
+<script src="{%$URL%}js/jquery.toTop.min.js"></script>
+<script> 
+$(document).ready(function(){
+	 $("#a1").animate({
+      left: "0%",
+     opacity:"1",
+    },800);
+  $("#a2").animate({
+      right: "0%",
+     opacity:"1",
+    },800);
+	 $("#a3").animate({
+      left: "0%",
+     opacity:"1",
+    },1000);
+	 $("#a4").animate({
+      right: "0%",
+     opacity:"1",
+    },1000);
+
+ 
+
+	 $("#n1").animate({
+      left: "0%",
+     opacity:"1",
+    },700);
+    $("#n2").animate({
+      right: "0%",
+     opacity:"1",
+    },800);
+	 $("#n3").animate({
+      left: "0%",
+     opacity:"1",
+    },900);
+	 $("#n4").animate({
+      right: "0%",
+     opacity:"1",
+    },1000);
+	
+		$(".search").click(function(){
+			if($(".ss").width()==0){
+				$(".ss").animate({width:'100%'});
+			}
+			else
+			{
+				$(".ss").animate({width:'0%'});
+			}
+		});
+ });
+ </script>
+</head>
+
+<body style="max-width:640px;margin:0 auto;">
+<!--header start-->
+{%include file="head.htm"%}
+<!--header end--> 
+
+<!--index start-->
+<div class="lanmu" align="center">
+		  <div style="width:94%;padding-top: 4%;padding-bottom:5%;" align="center">
+		
+		  	<span style="color:#fff;font-size:26px;"> {%$LCMX.lanmu_name%}</span>
+		  </div>
+		</div>
+	 
+
+        <div class="box_main" style="margin:5%;">
+            
+                <div class="cent">
+     <table width="100%" border="0" align="center" cellpadding="0" cellspacing="15"  style="margin:60px"  class="link_lan">
+    <tr>
+      <td width="160" align="right" valign="top"></td>
+      <td><h2>您访问的页面不存在！您可能遇到了以下问题: </h2>
+        <ul>
+          <li>1. 该信息可能不完整或已经过期，或未通过审核本站审核。</li>
+          <li>2. 该信息可能已经被会员自行屏蔽或删除，或因违反有关规定已被删除。</li>
+          <li>3. 如果您是通过站外搜索而出现问题，请在本站重新搜索或<a href="index.php">返回首页</a></li>
+          <li>4. 如果您是在地址栏输入或复制粘贴地址出现问题，请检查地址拼写是否正确。</li>
+        </ul></td>
+    </tr>
+  </table>
+                </div> 
+           
+        </div>
+
+
+<!--index end--> 
+
+<!--footer start-->
+{%include file="foot.htm"%}
+<!--footer end-->
+</body>
+</html>

@@ -1,0 +1,333 @@
+@charset "utf-8";
+/* CSS 预处理 */
+body, div, address, blockquote, iframe, ul, ol, dl, dt, dd, li, dl, h1, h2, h3, h4, h5, h6, p, pre, table, caption, th, td, form, legend, fieldset, input, button, select, textarea {
+margin:0; padding:0; font-weight: normal;font-style: normal;font-size: 100%; font-family:"Microsoft Yahei",Arial, Helvetica, sans-serif}
+ol, ul ,li{list-style: none}
+img {border: 0; margin:0; padding:0}
+body {text-align:left; font-size:12px}
+a,em{text-decoration:none; font-style:normal; cursor:pointer}
+header,footer,article,aside,section,nav,menu,hgroup,details,dialog,figure,figcaption{display:block}
+
+.clear{clear:both}
+.clearR{clear:right}
+.box{margin:0 auto}
+
+@font-face{
+	font-family: "mxicon";
+	src: url("../fonts/mxicon.eot");/* IE9 兼容模式 */
+	src: url("../fonts/mxicon.eot?#iefix") format("embedded-opentype")
+		 ,url("../fonts/mxicon.woff") format("woff")
+		 ,url("../fonts/mxicon.ttf") format("truetype")
+		 ,url("../fonts/mxicon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal
+}
+.mxicon{
+	font-family: "mxicon";
+	font-style: normal;
+	font-weight: normal;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+.head{ background:#222222; height:60px; position:relative; width:100%}
+.logo {
+	width: 165px;
+	padding-left:19px;
+	float: left
+}
+.logo a{ font-size:24px; color:#FFF; line-height:60px; display:block}
+.head_right {
+	height: 60px;
+	float: right;
+	margin-right: 10px
+}
+.head_right ul li {
+	width:122px;
+	text-align:center;
+	float: left;
+	border-left:#333333 solid 1px
+}
+.head_right ul li a {
+	width:84px; height:25px;
+	margin-top:21px;
+	line-height:24px;
+	font-size:14px;
+	color: #ffffff;
+	text-align: center;
+	display:inline-block;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s
+}
+.head_right ul li a:hover{color:#5d3800;background-color:#f8cd45;
+	background-image:-webkit-linear-gradient(top,#f6e5b0,#ed9017);
+	background-image:-moz-linear-gradient(top,#f6e5b0,#ed9017);
+	background-image:-ms-linear-gradient(top,#f6e5b0,#ed9017);
+	background-image:linear-gradient(top,#f6e5b0,#ed9017);
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#f6e5b0', endColorStr='#ed9017', gradientType='0');
+	border-radius:3px;
+	-webkit-transition: background 0.5s linear,font-size 0.5s linear;
+	-moz-transition: background 0.5s linear,font-size 0.5s linear;
+	transition: background 0.5s linear,font-size 0.5s linear
+}
+#msgBox {position:absolute;bottom:0px;width:100%;text-align: center}
+#msgBox span {width:200px;background:#68af02;color:#FFF;border:2px #68af02 solid;padding:3px 5px 3px 5px;display:none}
+.main{ background:url(../images/main_bg.gif) repeat-y}
+.mx_left{ width:219px;float:left; background:#222222; min-height:600px}
+.mx_left ul{}
+.mx_left ul li{ width:219px; border-top:#151515 solid 1px; border-bottom:#151515 solid 1px; background:#222222}
+.mx_left ul li a{width:202px; height:48px; display:block; line-height:48px; font-size:16px; color:#ffffff; padding-left:17px;
+-webkit-transition: background 0.5s linear,font-size 0.5s linear;
+-moz-transition: background 0.5s linear,font-size 0.5s linear;
+transition: background 0.5s linear,font-size 0.5s linear}
+.mx_left ul li a:hover{ background:#48ac2e}
+.mx_left ul li ul{ display:none}
+.mx_left ul li ul li{ background:#2c2c2c; border:none}
+.mx_left ul li ul li a{ margin-left:17px; font-size:14px; height:37px; line-height:37px; padding-left:17px; width:185px;border-top:#353535 solid 1px; border-bottom:#272727 solid 1px; color:#c0c0c0;
+-webkit-transition: background 0.5s linear,font-size 0.5s linear;
+-moz-transition: background 0.5s linear,font-size 0.5s linear;
+transition: background 0.5s linear,font-size 0.5s linear}
+.mx_left ul li ul li a span{ display:none}
+.mx_left ul li ul li:hover{ background:none !important}
+.mx_left ul li ul li:hover span{ display:block;float:right; font-size:18px; margin-right:-3px; color:#FFF}
+.mx_right{ margin-left:219px; border-top:#a09d9e solid 1px; min-width:1061px}
+.sysconfig span{ float:right; margin-right:14px}
+.singlepage span{ float:right; margin-right:14px}
+.article span{ float:right; margin-right:14px}
+.product span{ float:right; margin-right:14px}
+.download span{ float:right; margin-right:14px}
+.gbook span{ float:right; margin-right:14px}
+.employ span{ float:right; margin-right:14px}
+.orderform span{ float:right; margin-right:14px}
+.recyclebin span{ float:right; margin-right:14px}
+
+.advancedfeatures span{ float:right; margin-right:14px}
+.customercare span{ float:right; margin-right:14px}
+#footer{ text-align:center; background:#f7f7f7; color:#333333; font-size:14px; height:40px; line-height:40px}
+/*主页*/
+.main_c{ margin-top:70px; min-width:1061px}
+.main_top{padding-left:7%; padding-right:17.1%}
+.main_top_c{ float:left}
+.main_top_t{ font-size:48px; color:#474747; padding-bottom:30px}
+.main_top_ab{ color:#707070; font-size:20px}
+.main_datetime{ float:right; font-size:30px}
+.main_datetime span{ font-size:86px}
+.main_datetime #d_point{ animation:twinkling 1s infinite ease-in-out; -webkit-animation:twinkling 1s infinite ease-in-out}
+@keyframes twinkling{
+	0% {opacity:0}
+	100% {opacity:1}
+}
+@-webkit-keyframes twinkling{
+	0% {opacity:0}
+	100% {opacity:1}
+}
+
+.metro ul{ padding-top:60px; padding-bottom:80px}
+.metro ul li{ height:150px; float:left; text-align:center}
+.metro ul li a{ color:#FFF; font-size:1.25em}
+.metro ul li a p{ font-size:3em; padding-top:30%; padding-bottom:6%}
+
+.li_1{ width:9.3%; background:#46b234; margin-right:0.6%}
+.li_1 a p{ padding-top:30% !important; padding-bottom:6% !important}
+.li_2{ width:36.4%; margin-right:0.6%}
+.li_2 a{ width:100%; display:block; height:306px; background:#e29818}
+.li_2 a p span{ font-size:4em !important}
+.li_2 a p samp{ padding-left:1.25em}
+.li_3{ width:17.8%; margin-right:0.6%; background:#1fd1f6}
+.li_3 a p{ padding-top:18% !important; padding-bottom:5% !important}
+.li_4{ width:11.6%; margin-right:0.6%; background:#1fd1f6}
+.li_5{ width:11.6%; background:#1fd1f6}
+.li_6{ width:10.2%; *width:9.4%; float:right !important; background:#1fd1f6}
+.li_6 a p{ padding-top:35% !important; padding-bottom:5% !important}
+.li_7{ width:9.3%; background:#1fd1f6; margin-top:6px; margin-right:37.6%; *margin-right:28.8%}
+.li_7 a p{ padding-top:30% !important; padding-bottom:6% !important}
+.li_8{ width:17.8%; margin-right:0.6%; margin-top:6px}
+.li_8 a{ width:100%; display:block; height:150px; background:#17944b}
+.li_8 a p{ padding-top:15% !important;}
+.li_9{ width:23.8%; *width:24%; margin-top:6px; background:#e96524}
+.li_9 a p{ padding-top:16% !important;}
+.li_10{ width:10.2%; *width:9.4%; background:#e29818; margin-top:6px; float:right !important}
+.li_10 a p{ padding-top:35% !important; padding-bottom:5% !important}
+.li_11{ width:9.3%; background:#e96524; margin-top:6px; margin-right:0.6%}
+.li_11 a p{ padding-top:30% !important; padding-bottom:6% !important}
+.li_12{ width:17.8%; margin-top:6px; margin-right:0.6%; *margin-right:0.4%; background:#1fd1f6}
+.li_12 a p{ padding-top:18% !important; padding-bottom:5% !important}
+.li_13{ width:18%; margin-top:6px; margin-right:19%; *margin-right:14.7%; background:#d65037}
+.li_13 a p{ padding-top:18% !important; padding-bottom:5% !important}
+.li_14{ width:11.6%; margin-right:0.6%; background:#d65037; margin-top:6px}
+.li_15{ width:11.6%; background:#1fd1f6; margin-top:6px}
+.li_16{ width:10.2%; *width:9.4%; float:right !important; background:#46b234; margin-top:6px}
+.li_16 a p{ padding-top:35% !important; padding-bottom:5% !important}
+
+.operatearea{ background:#f2f2f2; min-height:60px; border-bottom:#a09d9e solid 1px; border-top:#e1e1e1 solid 1px}
+.operatearea .operateul{ padding-top:12px; padding-bottom:10px; padding-left:20px}
+.operatearea .operateul li{ float:left}
+.operatearea .operateul li a{ height:38px; line-height:38px; display:block; text-align:center; font-size:1.125em; padding:0 2.5em 0 2.5em}
+.searcharea{ float:right !important; margin-right:1.4%}
+.searcharea .sort_select{float:left; height:36px; line-height:36px; margin-right:1em; border:#dfdfdf solid 1px}
+.searcharea .sort_select span{ display:inline-block; height:36px; line-height:36px;padding-left:12px; color:#333333; font-size:1.125em}
+.searcharea .sort_select .down{ width:2.375em; height:36px; line-height:36px; display:inline-block; text-align:center; margin-left:1em}
+.searcharea .sort_t{height:36px; line-height:36px}
+.sort_select{ background:#FFF; position:relative}
+.sort_select .down{ border-left:#dfdfdf solid 1px}
+.sort_select ul{ position:absolute; top:36px; left:0; display:none; background:#FFF; border:#dfdfdf solid 1px}
+.sort_select ul li{display:inline-block; height:36px; line-height:36px; float:left; width:100%; overflow:hidden;cursor:pointer}
+.sort_select ul li span{padding-right:12px}
+.searchinput{height:36px; line-height:36px; border:none; padding-left:1.2em; padding-right:1.2em; width:100px; font-size:1.125em;vertical-align:middle;
+-webkit-transition:all 0.6s; transition:all 0.6s; -moz-transition:all 0.6s}
+.searchsub{ height:36px; line-height:36px; border:none; color:#6d6d6d; background:#FFF; font-size:1.5em; vertical-align:middle; padding:0 .5em 0 .5em}
+.release{background:#48ac2e; color:#FFF}
+.typemanage{ background:#FFF; color:#333333; margin-left:1em}
+.typemanageh{background:#48ac2e; color:#FFF; margin-left:1em}
+.batchupload{ background:#f2a926; color:#FFF; margin-left:1em}
+.sort_t{ color:#333333; font-size:1.125em}
+.sortnum{ width:60px; height:34px; border:#dfdfdf solid 1px; line-height:34px;vertical-align:middle; padding-left:.5em; padding-right:.5em}
+
+.list_head{ padding:3em 1% 0 1%}
+.list_head li{ background:#f2f2f2;height:50px}
+.list_head li span{ height:50px; line-height:50px; float:left; width:8%; text-align:center}
+.list_head li .spanr{ float:right !important}
+.list_con{ padding:0 1% 3em 1%}
+.list_con li{height:50px}
+.list .list_title{ width:30%}
+.list input{ width:100%; background:none}
+.list_con li span{ height:50px; line-height:50px; float:left; width:8%; text-align:center}
+.list_con li span a{ width:50px; height:50px; display:inline-block}
+.list_con li span .title_input{height:50px; line-height:50px; border:none; padding-left:1em}
+.list_con li span .sort_input{width:100%; background:none; height:50px; line-height:50px; border:none}
+.list li .del{ position:relative}
+.list_con li .mxicon{ font-size:1.5em}
+.list_con li .spanr{ float:right !important}
+.checkall_op{ padding:0 1% 20px 1%}
+#checkall{ margin-left:1em; margin-right:1em}
+.checkall_sub{ background:#48ac2e; border:none; height:38px; line-height:38px; padding-left:30px; padding-right:30px; font-size:16px; color:#FFF}
+.checkall_sub1{ background:#48ac2e; border:none; height:35px; line-height:35px; padding:0 5px;  font-size:16px; color:#FFF}
+.checkall_op .checkall{ float:left}
+/*分页样式*/
+.checkall_op .pages{height:30px; float:left; margin-left:5em}
+.pages ul li {
+	height:28px; line-height:28px;
+	float: left;
+	border: 1px solid #CCCCCC; padding:0 1.2em 0 1.2em;
+	white-space:nowrap; margin-right:1em;-webkit-transition:all 0.3s; transition:all 0.3s; -moz-transition:all 0.3s
+}
+.pages ul li a {
+	color:#000;
+	display:block; padding:0 1.2em 0 1.2em
+}
+.pages ul li:hover {
+	background:#48ac2e;
+	border:1px solid #48ac2e; color:#FFF
+}
+.pages ul li a:hover {
+	color:#FFF;
+	background:#48ac2e
+}
+.page_zong {}
+#page_on {
+	background:#48ac2e;border:1px solid #48ac2e;
+	color: #fff
+}
+.page_a{ padding:0!important; display:inline !important}
+.page_a a:hover{background:#48ac2e;color: #fff}
+
+.pro{padding:3em 1% 3em 1%}
+.pro li{ width:211px; height:209px; float:left; margin:0 1.875em 30px 0}
+.pro li a{ display:inline-block}
+.pro_title{ width:170px; border:none; font-size:1em; height:30px; line-height:30px}
+.pro_sort{ width:40px; border:none; font-size:1em;height:30px; line-height:30px; text-align:center}
+
+.pro_list_op dt{ float:left; height:13px; line-height:13px; padding:0 0.40625em 0 0.40625em}
+.pro_list_op dl{ float:right}
+
+/*小删除提示框*/
+.deltip{
+	width: 200px;
+	left: 50%;
+	margin-left: -130px;
+	background: #ffffff;
+	position: absolute;
+	z-index: 9;
+	border: solid 1px #d2d2d2;
+	padding-bottom:15px; text-align:center
+}
+.deltip_title {
+	border-bottom: 1px solid #d2d2d2;
+	height: 33px
+}
+.deltip_t_l {
+	float: left;
+	line-height: 33px;
+	padding-left: 13px;
+	font-size: 14px;
+	color: #333333;
+	font-weight: bold
+}
+.deltip_t_r {
+	height:33px;
+	line-height:33px;
+	float: right
+}
+.deltip_close{ height:30px !important; line-height:30px; font-size:1.2em !important}
+.deltip_con {
+	color: #333333;
+	line-height: 20px;
+	width: 180px;
+	margin: 5px auto;
+	font-size:.5em
+}
+.deltip_confirm {
+	width: 80px !important;
+	height: 30px !important;
+	line-height:30px !important;
+	background:#48ac2e; color:#FFF; text-align:center
+}
+
+.deltip_confirm1 {
+	width: 50px !important;
+	height: 30px !important;
+	line-height:30px !important;
+	background:#48ac2e; color:#FFF; text-align:center;display:inline-block;margin:0 5px;
+}
+
+.deltip_cancel {
+	width: 78px !important;
+	height: 28px !important;
+	line-height:28px;
+	background: #fafafa;
+	color: #333333;
+	border: 1px solid #d2d2d2; margin-left:5px; text-align:center
+}
+
+.deltip_cancel1 {
+	width: 50px !important;
+	height: 28px !important;
+	line-height:28px;
+	background: #fafafa;
+	color: #333333;
+	border: 1px solid #d2d2d2; margin-left:5px; text-align:center;display:inline-block;margin:0 5px;
+}
+
+
+
+
+.icon{ color:#000}
+.icon_show{color:#090 !important}
+.icon_hide{}
+.trh td{ padding-top:7px; padding-bottom:7px}
+.trh td b{ font-size:18px}
+.tdh{ color:#606060; font-size:16px}
+.input{ border:#dfdfdf 1px solid}
+
+ .opacity{
+filter:alpha(opacity=0);      
+-moz-opacity:0;             
+-khtml-opacity:0;             
+opacity: 0;    
+position:absolute;
+left:10px;
+top:0;
+width:62px;
+height:40px;       
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>{%$LCMX.touch_name%}</title>
+<link href="{%$URL%}style/webstyle.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="{%$URL%}style/nav.css" />
+<script src="{%$URL%}js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="{%$URL%}js/velocity.min.js"></script>
+<script type="text/javascript" src="{%$URL%}js/main.js"></script>
+<script src="{%$URL%}js/jquery.toTop.min.js"></script>
+<script> 
+$(document).ready(function(){
+	 $("#a1").animate({
+      left: "0%",
+     opacity:"1",
+    },800);
+  $("#a2").animate({
+      right: "0%",
+     opacity:"1",
+    },800);
+	 $("#a3").animate({
+      left: "0%",
+     opacity:"1",
+    },1000);
+	 $("#a4").animate({
+      right: "0%",
+     opacity:"1",
+    },1000);
+
+ 
+
+	 $("#n1").animate({
+      left: "0%",
+     opacity:"1",
+    },700);
+    $("#n2").animate({
+      right: "0%",
+     opacity:"1",
+    },800);
+	 $("#n3").animate({
+      left: "0%",
+     opacity:"1",
+    },900);
+	 $("#n4").animate({
+      right: "0%",
+     opacity:"1",
+    },1000);
+	
+		$(".search").click(function(){
+			if($(".ss").width()==0){
+				$(".ss").animate({width:'100%'});
+			}
+			else
+			{
+				$(".ss").animate({width:'0%'});
+			}
+		});
+ });
+ </script>
+</head>
+
+<body style="max-width:640px;margin:0 auto;">
+<!--header start-->
+{%include file="head.htm"%}
+<!--header end--> 
+
+<!--index start-->
+
+	<div class="lanmu" align="center">
+		  <div style="width:94%;padding-top: 4%;padding-bottom:5%;" align="center">
+		  	{%lcmx_news_type_get set="列表名:tshow,类别:GET[c_id],栏目:GET[lanmu]"%}
+		  	<span style="color:#fff;font-size:26px;">{%$tshow.lanmuname%}</span>
+		  </div>
+		</div> 
+
+  	<div class="box_main">
+	  		
+	  	
+        <div class="news_show_cont" style="padding:5%;">
+			{%lcmx_3g_news_show set="列表名:show,编号:GET[id],栏目:GET[lanmu]"%}
+			<p>{%$show.lc_title%}</p>
+			<span>{%$show.lc_content%}</span>
+		</div>
+        
+   </div>
+   
+   <div class="page1">
+        <ul>
+          <li>
+            <div>{%if $show.p_id%}<a href="index.php?p=news_show&id={%$show.p_id%}&lanmu={%$smarty.get.lanmu%}">上一页</a>{%else%}暂无{%/if%}</div>
+          </li>
+          <li>
+            <div>{%if $show.n_id%}<a href="index.php?p=news_show&id={%$show.n_id%}&lanmu={%$smarty.get.lanmu%}">下一页</a>{%else%}暂无{%/if%}</div>
+          </li>
+        </ul>
+      </div>
+
+<div class="cl"></div>
+<!--index end--> 
+
+<!--footer start-->
+{%include file="foot.htm"%}
+<!--footer end-->
+</body>
+</html>

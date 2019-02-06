@@ -1,0 +1,41 @@
+{%lcmx_v_danye_show set="列表名:show,编号:GET[id]"%}
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta charset="utf-8">
+<title>{%$web_name%}</title>
+<link href="{%$URL%}css/base.css" rel="stylesheet" type="text/css">
+<script src="{%$URL%}js/jquery-1.9.0.min.js"></script>
+<script src="{%$URL%}js/jquery.touchslider.js"></script>
+<script src="{%$URL%}js/js.js"></script>
+</head>
+
+<body>
+{%include file="head.htm"%}
+<div id="ceng" style="display: none; width: 100%; height: 100%; z-index: 100; position: absolute; top: 0; right: 0; bottom: 0">
+  <div id="close" style="width: 55%; background: #444; height: 100%; float: left; background-color: rgba(0, 0, 0, 0.5)"><img src="{%$URL%}img/close.png" style="padding: 15px"></div>
+  <div style="width: 45%; background: #b80b0c; height: 100%; float: left" class="type">
+    <ul>
+      {%lcmx_v_danye_type set="列表名:danyetype,所属栏目:GET[lanmu]"%}
+      {%foreach from=$danyetype item=list%}
+      <li><a href="index.php?p=about&id={%$list.lc_id%}&lanmu={%$lanmu%}">{%$list.lc_title%}</a></li>
+      {%/foreach%}
+    </ul>
+  </div>
+</div>
+<!--公司简介-->
+<section>
+  <div class="sub_title"><span class="title">首页 > {%$show.lanmuname%}</span></div>
+  <div class="danye_con">
+    <p class="h9">{%$show.lc_title%}</p>
+    <p>{%$show.con%}</p>
+  </div>
+</section>
+<!--公司简介结束--> 
+<!--一键沟通--> 
+{%include file="yijian.htm"%} 
+<!--一键沟通结束--> 
+{%include file="foot.htm"%}
+</body>
+</html>

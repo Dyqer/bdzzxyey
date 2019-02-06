@@ -1,0 +1,23 @@
+<header class="header">
+  <h1 id="logo"><img src="{%$URL%}images/logo.jpg" /></h1>
+  <div class="tele"><img src="{%$URL%}images/tele.png" /></div>
+  <div style="clear:both"></div>
+</header>
+<div id="Banner">
+  <ul class="touchslider-viewport">
+    {%lcmx_v_banner_list set="列表名:banner"%}
+    {%if $banner%}
+    {%foreach from=$banner item=list%}
+    <li class="touchslider-item"> <img src="{%$list.pic%}"> </li>
+    {%/foreach%}
+    {%/if%}
+  </ul>
+  <div class="touchslider-nav"> 
+    <!--<a class="touchslider-prev">&lt;</a>--> 
+    <!--<div class="sonpic">
+        <a class="touchslider-nav-item touchslider-nav-item-current"></a>
+        <a class="touchslider-nav-item"></a>
+    </div> --> 
+    <!--<a class="touchslider-next"><span class="touchslider-next-in">&gt;</span></a>--> 
+  </div>
+</div>

@@ -1,0 +1,42 @@
+{%lcmx_v_products_show set="列表名:show,编号:GET[id]"%}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{%$web_name%}</title>
+<link href="{%$URL%}css/base.css" rel="stylesheet" type="text/css">
+<script src="{%$URL%}js/jquery-1.9.0.min.js"></script>
+<script src="{%$URL%}js/jquery.touchslider.js"></script>
+<script src="{%$URL%}js/js.js"></script>
+</head>
+<body>
+{%include file="head.htm"%} 
+<!--公司简介-->
+<section>
+  <div class="sub_title"><span class="title">首页 > {%$LCMX.lanmu_name%}</span></div>
+  <div class="danye_con">
+    <p class="h9">{%$show.lc_title%}</p>
+    <div style="margin: auto; text-align: center"><img src="{%$show.small_pic%}" width="50%"></div>
+    <p>{%$show.lc_phone_content%}</p>
+    <div class="page">
+      <ul>
+        <li>
+          <div>{%if $show.p_id%}<a href="index.php?p=products_show&id={%$show.p_id%}">上一页</a>{%else%}暂无{%/if%}</div>
+        </li>
+        <li>
+          <div>{%if $show.n_id%}<a href="index.php?p=products_show&id={%$show.n_id%}">下一页</a>{%else%}暂无{%/if%}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="clear"></div>
+</section>
+<!--公司简介结束--> 
+<!--一键沟通--> 
+{%include file="yijian.htm"%} 
+<!--一键沟通结束--> 
+
+{%include file="foot.htm"%}
+</body>
+</html>

@@ -1,0 +1,45 @@
+<div class="lxr">
+	<div class="right_xl">
+		{%lcmx_danye_show set="列表名:show,编号:11,栏目:11"%}
+		<span>{%$show.con%}</span>
+	</div>
+	<div class="cl"></div>
+	<div class="right_xl_conver">
+		{%lcmx_danye_show set="列表名:show,编号:16,栏目:11"%}
+		{%$show.con%}
+	</div>
+	<div class="cl"></div>
+	<div class="lxr_jptj">
+		<div class="lxr_jptj_size">
+			<p>精品推荐</p>
+			Recommend
+		</div>
+	</div>
+	<div class="cl"></div>
+	<div class="lxr_news">
+			<span style="text-align: left;float:left; font-size:20px; color:#000;">新闻动态</span>
+			 <a href=""><span style="text-align: right; float:right;color:#3c3c3c;">了解更多   <img src="{%$URL%}images/ljgd.png"></span></a>
+	</div>
+	<div class="cl"></div>
+	{%lcmx_news_list set="列表名:news,栏目:1,类别:1,显示数目:3,标题长度:25"%}
+	{%foreach from=$news item=list %}
+	<a class="anewsa" href="index.php?p=news_show&lanmu={%$list.lanmu%}&c_id={%$list.c_id%}&id={%$list.lc_id%}">
+	<div class="lxnews_list">
+		<div class="title_Time">
+			<div class="rq_title">
+					{%$list.lc_datetime|date_format:"%d.%m"%}<span style="font-size:14px;">{%$list.lc_datetime|date_format:"%Y"%}</span>
+			</div>
+			<div class="rq_ms">
+				{%$list.title%}
+			</div>
+		</div>
+		<div class="lxnews_list_conver">
+				{%$list.description%}
+		</div>
+	</div>
+	</a>
+	<div class="cl"></div>
+	{%/foreach%}
+
+
+</div>

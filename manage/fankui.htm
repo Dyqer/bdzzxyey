@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<head>
+<link type="text/css" rel="stylesheet" href="resource/css/css.css">
+<script type="text/javascript">
+window.onload = function() {
+	//获取反馈地址
+	document.getElementById("wangzhi").value = document.location.hostname;
+	document.getElementById("wangzhi2").value = document.location.hostname;
+}
+// 表单提交客户端检测
+function doSubmit(){
+	var patrn=/^[\u4e00-\u9fa5]{2,4}$/;
+	if (document.w_gbook.leixing.value==""){
+		alert("请选择问题类型！");
+		document.w_gbook.leixing.focus();
+		return false;
+	}
+	if (document.w_gbook.xingming.value==""){
+		alert("请写姓名！");
+		document.w_gbook.xingming.focus();
+		return false;
+	}
+	if (!patrn.exec(document.w_gbook.xingming.value)){
+		alert("请输入2-4个以内的汉字！");
+		document.w_gbook.xingming.focus();
+		return false;
+	}
+	
+	if (document.w_gbook.dianhua.value==""){
+		alert("请写联系电话！");
+		document.w_gbook.dianhua.focus();
+		return false;
+	}
+	if (document.w_gbook.dianhua.value.length<7){
+		alert("请输入7-12位以内的数字！");
+		document.w_gbook.dianhua.focus();
+		return false;
+	}
+	if (document.w_gbook.dianhua.value.length>12){
+		alert("请输入7-12位以内的数字！");
+		document.w_gbook.dianhua.focus();
+		return false;
+	}
+	
+	if (document.w_gbook.wangzhi.value==""){
+		alert("请填写网址！");
+		document.w_gbook.wangzhi.focus();
+		return false;
+	}
+	
+	if (document.w_gbook.neirong.value==""){
+		alert("请写网站内容！");
+		document.w_gbook.neirong.focus();
+		return false;
+	}
+
+	return true;
+}
+</script>
+</head>
+<body>
+<form name="w_gbook" action="http://www.longcai0351.com/yjfkadd.asp" method="post" onSubmit="return doSubmit()">
+  <table width="500" border="0" cellspacing="0" cellpadding="5" summary="留言" style="border-collapse: collapse; margin-top: 10px" bordercolor="#C0C0C0">
+    <tr>
+      <td height="36" width="83" align="center"><b>问题类型：</b></td>
+      <td height="36"><label>
+          <select name="leixing" size="1" class="input">
+            <option value="">请选择</option>
+            <option value="网站维护">网站维护</option>
+            <option value="网站建设">网站建设</option>
+            <option value="空间域名">空间域名</option>
+            <option value="百度客服">百度客服</option>
+            <option value="网站客服">网站客服</option>
+            <option value="网站备案">网站备案</option>
+            <option value="投诉建议">投诉建议</option>
+            <option value="其他">其他</option>
+          </select>
+        </label>
+        <span id="c_leixing"></span></td>
+    </tr>
+    <tr>
+      <td height="36" width="83" align="center"><b>姓&nbsp;&nbsp;&nbsp;名：</b></td>
+      <td height="36"><input class="input" name="xingming" type="text" style="width: 300px" >
+        <span id="c_xingming"></span></td>
+    </tr>
+    <tr>
+      <td height="36" width="83" align="center"><b>电&nbsp;&nbsp;&nbsp;话：</b></td>
+      <td height="36"><input class="input" type="text" name="dianhua" style="width: 300px" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')">
+        <span id="c_tel"></span></td>
+    </tr>
+    <tr>
+      <td height="36" width="83" align="center"><b>网&nbsp;&nbsp;&nbsp;址：</b></td>
+      <td height="36"><input name="wangzhi2" type="text" class="input" id="wangzhi2" style="width: 300px" readonly>
+        <input name="wangzhi" id="wangzhi" type="hidden">
+        <span id="c_url"></span></td>
+    </tr>
+    <tr>
+      <td height="120" width="83" align="center"><b>内&nbsp;&nbsp;&nbsp;容：</b></td>
+      <td height="120"><label>
+          <textarea name="neirong" cols="45" rows="7" class="input" style="height: 80px" ></textarea>
+        </label></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" class="fu_right_lan_btn" value="提交"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

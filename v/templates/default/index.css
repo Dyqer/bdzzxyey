@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+/* 样式初始化
+--------------------------------------------------*/
+body,div,address,blockquote,iframe,ul,ol,dl,dt,dd,li,dl,h1,h2,h3,h4,h5,h6,p,pre,table,caption,th,td,form,legend,fieldset,input,button,select,textarea
+	{
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 100%;
+	font-family: "宋体", Arial, Helvetica, sans-serif;
+}
+
+ol,ul,li {
+	list-style: none;
+}
+
+img {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	text-align: left;
+	font-size: 14px;
+	background: url(../images/body.jpg) repeat-x top;
+	color: #7c7c7c;
+	font-family: "微软雅黑";
+}
+
+a,em {
+	text-decoration: none;
+	font-style: normal;
+}
+
+.clear {
+	clear: both;
+}
+
+a {
+	color: #333333;
+}
+
+/*通用*/
+html,body {
+	width: 100%;
+}
+
+.index_box {
+	width: 91.5%;
+	margin: 0 auto;
+}
+
+.index_box img {
+	width: 100%;
+}
+
+.box {
+	width: 100%;
+}
+
+.index_w {
+	width: 48%;
+	float: left;
+}
+
+.bg {
+	background: #cc2610;
+}
+
+.pro_box {
+	width: 92%;
+	margin: 0 auto;
+}
+
+.news_box {
+	width: 87.5%;
+	margin: 0 auto;
+}
+
+/*空隙*/
+.kx_1 {
+	height: 16px;
+	clear: both;
+}

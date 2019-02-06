@@ -1,0 +1,75 @@
+<div class="bot">
+	<div class="bot_bor">
+		<div class="con_bot1">
+			<div class="gg1">
+				<div class="QQtitle"><span>在线咨询</span>consulting</div>{%lcmx_danye_show set="列表名:show,编号:12,栏目:11"%}
+				
+				<a href="http://wpa.qq.com/msgrd?v=3&amp;uin={%$show.con%}&amp;site=qq&amp;menu=yes"><div class="bot1_QQ" style="margin-right:25px;"></div></a>
+				<div class="bot1_QQ" style="margin-right:25px;"></div>
+				<div class="bot1_QQ" style="margin-right:25px;"></div>
+				<div class="bot1_QQ"></div>
+			</div>
+			<div class="gg2">
+				
+			</div>
+			<div class="gg3">
+						{%lcmx_danye_show set="列表名:show,编号:11,栏目:11"%}
+				<div style="font-size:29px;color:#FFF;">{%$show.con%}</div>
+				{%lcmx_danye_show set="列表名:show,编号:12,栏目:11"%}
+				<div style="width:195px;height:25px;font-size:18px;color:#b7b7b7;float:right;text-align:left;padding-left:5px;">QQ:{%$show.con%}</div>
+			</div>
+		</div>
+		<div class="cl"></div>
+		<div class="con_bot2">
+			<div class="con">
+				{%lcmx_news_list set="列表名:news,栏目:13,类别:3,显示数目:6,分页显示:1,标题长度:80"%}
+				{%foreach from=$news item=list key=k%}
+				<a href="http://{%$list.description%}" class="con_a_a">{%$list.lc_title%}</a>
+				{%/foreach%}
+			</div>
+		</div>
+		<div class="cl"></div>
+		
+		<div class="con_bot3">
+			<div class="con3_login">
+				<!-- <img src="{%$URL%}images/login11.png" alt=""> -->
+			</div>
+			<div class="dhdz">
+				{%lcmx_danye_show set="列表名:show,编号:11,栏目:11"%}
+				<div class="con3_dh1">{%$show.con%}</div>
+				<div class="con3_dz2">公司地址:{%$LCMX.bot%}</div>
+			</div>
+		</div>
+	</div>
+	<div class="cl"></div>
+	<div class="con_bot4">版权所有：博山区八陡镇中心幼儿园</div>
+</div>
+<div class="dingbu">
+		<ul>
+			<li class="li1"> <span>在线咨询</span></li>
+			<li class="li2"> <span>0533-4911669</span></li>
+			<li class="li3"><a href="#aa" style="color:#FFF;"><span>回到顶部</span></a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+<div class="fanhui">
+			<img src="{%$URL%}images/33.png" alt="">
+		    <img src="{%$URL%}images/34.png" alt="">
+		    <img src="{%$URL%}images/35.png" alt="">
+</div>
+
+	<script>
+
+	$('.fanhui img').mouseenter(function(){
+	    num = $(this).index();
+	    $('.dingbu li').eq(num).siblings().hide();
+	    $('.dingbu li').eq(num).show();
+	  })
+	$('.fanhui img').mouseleave(function(){
+	    $('.dingbu li').eq(num).hide();
+	    // $('.dingbu li').eq(num).siblings().hide();
+	    // $('.dingbu li').eq(num).show();
+	  })
+
+
+	</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link href="{%$URL%}style/webstyle.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="{%$URL%}style/nav.css" />
+<title>{%$LCMX.touch_name%}-一键分享</title>
+<script src="{%$URL%}js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="{%$URL%}js/velocity.min.js"></script>
+<script type="text/javascript" src="{%$URL%}js/main.js"></script>
+<script src="http://api.map.baidu.com/api?v=1.5&ak=170493a069b08faaba1a3ac49774fcc9"></script>
+<style>
+#bdshare{ font-size:100%;}
+#bdshare a{ font-size:100%; width:45%; border:1px solid #CCC; float:left; margin-bottom:1%;}
+.bds_tools a {display: block;float: left;
+cursor: pointer;
+padding-top: 0px;
+padding-bottom: 0px;
+padding-left: 22px;
+height:15%; font-size:100%;
+}
+</style>
+</head>
+
+<body style="max-width:640px;margin:0 auto;">
+<!--header start-->
+{%include file="header.htm"%}
+
+
+<div class="box_main">
+		<div style="width:100%; margin-top:16%;"></div>
+		<div> 
+			<!-- Baidu Button BEGIN -->
+			<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style=" background:#fff; padding-top:15px"> <a style="font-size:100%" class="bds_tsina">新浪微博</a> <a style="font-size:100%" class="bds_qzone">QQ空间</a> <a style="font-size:100%" class="bds_renren">人人网</a> <a style="font-size:100%" class="bds_t163">网易微博</a> <a style="font-size:100%" class="bds_tqq">腾讯微博</a> <a style="font-size:100%" class="bds_twi">Twitter</a> <a style="font-size:100%" class="bds_deli">delicious</a> <a style="font-size:100%" class="bds_tsohu">搜狐微博</a> <a style="font-size:100%" class="bds_diandian">点点网</a> <a style="font-size:100%" class="bds_ff">饭否</a> <a style="font-size:100%" class="bds_tieba">百度贴吧</a> <a style="font-size:100%" class="bds_bdxc">百度相册</a> </div>
+			<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=0" ></script> 
+			<script type="text/javascript" id="bdshell_js"></script> 
+			<script type="text/javascript">
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+        </script> 
+			<!-- Baidu Button END --> 
+		</div>
+	</div>
+
+
+
+<!--footer start-->
+{%include file="foot.htm"%}
+<!--footer end-->
+</body>
+</html>
+
+
+

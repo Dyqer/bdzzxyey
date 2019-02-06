@@ -1,0 +1,11 @@
+.menu { width: 300px;margin: 0 auto; position: fixed; left: 50%; bottom: 0; margin-left: -150px; -webkit-filter: url("#goo"); filter: url("../menu.html#goo"); -webkit-transform: translateZ(0); transform: translateZ(0); }
+.menu-wrapper { position: absolute; left: 50%; bottom: 30px; }
+.menu-toggle-button, .menu-item-bounce, .menu-item-button { background: #EC3A4D; border-radius: 50%; width: 60px; height: 60px; margin-left: -30px; margin-top: -30px; height: 60px; color: #fff; border: none; outline: none; position: relative; }
+.menu-toggle-button { background: transparent; position: absolute; top: 0; left: 0; }
+.menu-toggle-icon { font-size: 25px; position: absolute; top: 0; left: 0; width: 60px; height: 60px; line-height: 60px; }
+.menu-items { list-style-type: none; padding: 0; margin: 0; position: absolute; left: 0; top: 0; }
+.menu-item { position: absolute; top: 0; left: 0; width: 0; height: 0; }
+.menu-item-bounce { position: absolute; top: 0; left: 0; }
+.menu-item-button { width: 50px; height: 50px; margin-left: -25px; margin-top: -25px; position: absolute; top: 0; left: 0; color: #fff; }
+.menu-item-button:hover { color: #fff; }
+.menu_text{transform:rotate(180deg);-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);font-size:14px;}

@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="{%$show.description%}">
+	<meta name="keywords" content="{%$show.keywords%}">
+	<title>{%$web_name%}</title>
+	<link rel="stylesheet" href="{%$URL%}style.css">
+	<script type="text/javascript" src="{%$URL%}js/jquery-1.11.3.js"></script> 
+	<script type="text/javascript" src="{%$URL%}js/jquery.SuperSlide.2.1.1.js"></script>
+</head>
+<body>
+	{%include file='herder.htm'%}
+	<div class="bjajja">
+	<div class="index_body">
+	<div class="pro_listbor">
+		<div class="pro_title">
+		<div><span>我爱我的幼儿园</span></div>
+		<div><span>I love my kindergarten</span></div>
+	</div>
+		<div class="pro_bor">
+			<div class="pro_conv">
+				<script type="text/javascript">
+				$(document).ready(function(){
+
+					$(".pro_conv .li").mouseover(function(){
+						$(this).find(".pro_pic1").show();
+					});
+					$(".pro_conv .li").mouseout(function(){
+						$(this).find(".pro_pic1").hide();
+					});
+				});
+				</script>
+				<ul>
+							{%lcmx_danye_show set="列表名:show,编号:15,栏目:7"%}
+							
+								<li class="li">
+									<a href="index.php?p=about&lanmu=7&id=15">
+									<div class="pro_pic"><img src="{%$show.pic%}" width="100%"  height="161px;">	</div>
+									<div class="pro_pic2"><img src="{%$URL%}images/basbhas_05.png" alt=""></div>
+									<div class="pro_pic1">
+											<div style="height:65px"></div>
+											<p>{%$show.lc_title%}</p>
+							    			<p>Details</p>
+					    		    </div>
+					    		    </a>
+					    		 </li>   
+				    	
+				    		
+
+							<li class="li12"><img src="{%$URL%}images/dd.png" alt=""></li>
+				    		{%lcmx_danye_show set="列表名:show,编号:14,栏目:7"%}
+				    		<a href="index.php?p=about&lanmu=7&id=15">
+								<li class="li">
+									<div class="pro_pic"><img src="{%$show.pic%}" width="100%"  height="161px;">	</div>
+									<div class="pro_pic2"><img src="{%$URL%}images/basbhas_05.png" alt=""></div>
+									<div class="pro_pic1">
+											<div style="height:65px"></div>
+											<p>{%$show.lc_title%}</p>
+							    			<p>Details</p>
+					    		    </div>
+					    		 </li>   
+				    	
+				    		</a>
+
+							<li class="li12"><img src="{%$URL%}images/dd.png" alt=""></li>
+				    		{%lcmx_danye_show set="列表名:show,编号:13,栏目:7"%}
+				    			<a href="index.php?p=about&lanmu=7&id=15">
+								<li class="li">
+									<div class="pro_pic"><img src="{%$show.pic%}" width="100%"  height="161px;">	</div>
+									<div class="pro_pic2"><img src="{%$URL%}images/basbhas_05.png" alt=""></div>
+									<div class="pro_pic1">
+										<div style="height:65px"></div>
+											<p>{%$show.lc_title%}</p>
+							    			<p>Details</p>
+					    		    </div>
+					    		 </li>   
+				    	
+				    			</a>
+
+							<li class="li12"><img src="{%$URL%}images/dd.png" alt=""></li>
+				    		{%lcmx_danye_show set="列表名:show,编号:3,栏目:7"%}
+				    			<a href="index.php?p=about&lanmu=7&id=15">
+								<li class="li">
+									<div class="pro_pic"><img src="{%$show.pic%}" width="100%"  height="161px;">	</div>
+									<div class="pro_pic2"><img src="{%$URL%}images/basbhas_05.png" alt=""></div>
+									<div class="pro_pic1">
+											<div style="height:65px"></div>
+											<p>{%$show.lc_title%}</p>
+							    			<p>Details</p>
+					    		    </div>
+					    		 </li>   
+				    		</a>
+				    	
+
+				    		
+				    
+							</ul>
+						
+					<script>
+						// $(document).ready(function() {
+						// 	$("pro_pic").click(function(){
+						// 		alert(1);
+						// 	})
+						// })
+							
+					</script>
+				<!-- <div class="pro_pic"></div>
+				<div class="pro_dd"></div>
+				<div class="pro_pic"></div>
+				<div class="pro_dd"></div>
+				<div class="pro_pic"></div> -->
+			</div>
+		</div>
+	</div>
+		</div>
+		</div>
+			<div class="index_body">
+	<div class="pro_khal">
+		<div class="pro_khalbor">
+			<div class="pro_khaltbor">
+				<div><span>园内相册</span></div>
+				<div><span>Customer Case</span></div>
+			</div>
+			<div class="pro_khalconv">
+				{%lcmx_products_list set="列表名:products,显示数目:3,标题长度:20,类别:4,栏目:2"%}
+				  {%if $products %}
+				    {%foreach from=$products item=list key=k%}
+				    	{%if $k%2==0%}
+							<div class="pro_khallist">
+								<div class="pro_khal_lisibor1"><img src="{%$list.pic%}" width="100%" height="202px" alt=""></div>
+								<a href="index.php?p=products_show&id={%$list.id%}&lanmu={%$list.lanmu%}"><div class="pro_khal_lisibora"></div></a>
+
+								<div class="cl"></div>
+								<div class="pro_khal_lisiconver">
+										<a href="index.php?p=products_show&id={%$list.id%}&lanmu={%$list.lanmu%}" class="adad2">
+											<p>{%$list.title%}</p>
+										</a>
+									<span>
+										{%$list.description%}
+									</span>
+								</div>
+									<a href="index.php?p=products_list&lanmu={%$list.lanmu%}&c_id={%$list.c_id%}"><div class="pro_khal_lisiboraq{%$k%}"></div></a>
+							</div>
+
+				{%else%}
+							<div class="pro_khallist">
+								<div class="pro_khal_lisiconver">
+									<a href="index.php?p=products_show&id={%$list.id%}&lanmu={%$list.lanmu%}" class="adad2">
+											<p>{%$list.title%}</p>
+										</a>
+									<span>
+											{%$list.description%}
+									</span>
+								</div>
+								<div class="cl"></div>
+								<div class="pro_khal_lisibor1"><img src="{%$list.pic%}"  width="100%" height="202px" alt=""></div>
+
+								<a href="index.php?p=products_show&id={%$list.id%}&lanmu={%$list.lanmu%}"><div class="pro_khal_lisibora"></div></a>
+							</div>
+					{%/if%}
+					{%/foreach%}
+					{%else%} 
+					  暂无该类图文！ 
+					{%/if%}
+
+
+				<!-- <div class="pro_khallist">
+					<div class="pro_khal_lisiconver">
+						<p>天山茶庄绿茶</p>
+						<span>
+							产品包装的精美和包装质量的保障，能够有效...
+						</span>
+					</div>
+					<div class="cl"></div>
+					<div class="pro_khal_lisibor1"></div>
+					<div class="pro_khal_lisibora"></div> -->
+				<!-- </div>
+				<div class="pro_khallist">
+					<div class="pro_khal_lisibor1"></div>
+					<div class="pro_khal_lisibora"></div>
+					<div class="cl"></div>
+					<div class="pro_khal_lisiconver">
+						<p>天山茶庄绿茶</p>
+						<span>
+							产品包装的精美和包装质量的保障，能够有效...
+						</span>
+					</div>
+					<div class="pro_khal_listconbo"></div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+		</div>
+	<div class="news_width">
+		<div class="news_bor">
+			<div class="news_title">
+				<div><span>园内文章</span></div>
+				<div><span>News information</span></div>
+			</div>
+			<div class="news_con">
+				{%lcmx_news_list set="列表名:news,栏目:1,类别:1,显示数目:4,分页显示:1,标题长度:20"%}
+				{%foreach from=$news item=list key=k%}
+				{%if $k%2==0%}
+				<div class="news_newsbor news_margin">
+					<!-- 日期 -->
+					<a href="index.php?p=news_show&lanmu={%$list.lanmu%}&c_id={%$list.c_id%}&id={%$list.lc_id%}">
+					<div class="news_Datatim">
+						<div class="titme">
+								<span class="rq_titme">{%$list.lc_datetime|date_format:"%d"%}</span>
+								<span class="rq_titme1">/{%$list.lc_datetime|date_format:"%y"%}<br>{%$list.lc_datetime|date_format:"%m"%}月</span>
+						</div>
+					</div>
+					<div class="news_consize">
+						<p>{%$list.lc_title%}</p>
+						<span>{%$list.description%}</span>
+					</div>
+					</a>
+				</div>
+				{%else%}
+				<div class="news_newsbor">
+						<!-- 日期 -->
+					<a href="index.php?p=news_show&lanmu={%$list.lanmu%}&c_id={%$list.c_id%}&id={%$list.lc_id%}">
+					<div class="news_Datatim">
+						<div class="titme">
+							<span class="rq_titme">{%$list.lc_datetime|date_format:"%d"%}</span>
+								<span class="rq_titme1">/{%$list.lc_datetime|date_format:"%y"%}<br>{%$list.lc_datetime|date_format:"%m"%}月</span>
+						</div>
+					</div>
+					<div class="news_consize">
+						<p>{%$list.lc_title%}</p>
+						<span>{%$list.description%}</span>
+					</div>
+					</a>
+				</div>
+				{%/if%}
+				
+				{%/foreach%}
+				
+				<!-- <div class="news_newsbor news_margin"></div>
+				<div class="news_newsbor"></div> -->
+			</div>
+
+			<div class="cl"></div>
+			<div class="xiatiao"></div>
+		</div>
+	</div>
+	<div class="jptj">
+		<div class="jptj_bor">
+			<!-- 图文 -->
+			{%lcmx_products_show set="列表名:show,编号:20"%}
+			<div class="jptj_bor_cov">
+				<div class="jptj_bor_covsiz">
+					<p>{%$show.lc_title%}</p>
+					<p>{%$show.description%}</p>
+				</div>
+				<div class="jptj_bor_covimg"><img src="{%$show.pic%}" width="423px;" height="370px" alt=""></div>
+			</div>
+			<!-- 死链接 -->
+			<div class="jptj_tit_bor">
+				<div class="jptj_tit_lj ">
+				</div>
+				<a href="index.php?p=products_show&id=20&lanmu={%$show.lanmu%}"><div class="jptj_tit_lj2"></div></a>
+				<a href="index.php?p=products_show&id=19&lanmu={%$show.lanmu%}"><div class="jptj_tit_lj3"></div></a>
+			</div>
+			<!-- 图文 -->
+			{%lcmx_products_show set="列表名:show,编号:19"%}
+			<div class="jptj_bor_cov">
+				<div class="jptj_bor_covsiz">
+					<p>{%$show.lc_title%}</p>
+					<p>{%$show.description%}</p>
+				</div>
+				<div class="jptj_bor_covimg"><img src="{%$show.pic%}"  width="423px;" height="370px" alt=""></div>
+			</div>
+		</div>
+	</div>
+	<div class="news_width">
+		<div class="news_bor">
+			<div class="news_title">
+				<div><span>教师风采</span></div>
+				<div><span>News information</span></div>
+			</div>
+			<div class="news_gdd">
+			<div class="picScroll-left">
+			<div class="hd">
+				<a class="next"><</a>
+				<a class="prev">></a>
+			</div>
+			<div class="bd">
+				<ul class="picList">
+					{%lcmx_products_list set="列表名:products,标题长度:20,类别:4,栏目:2"%}
+					{%foreach from=$products item=list %}
+					<li>
+						<a href="index.php?p=products_show&lanmu={%$list.lanmu%}&c_id={%$list.c_id%}&id={%$list.lc_id%}" target="_blank" class="aaaa">
+							<div class="pic"><img src="{%$list.pic%}" width="100%" height="252px" /></div>
+							
+							<div class="picListtitle">
+								<span>{%$list.title%}</span>
+								{%$list.description%}
+							</div>
+						</a>
+					</li>
+					{%/foreach%}
+					<!-- <li>
+						<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="{%$URL%}images/lunbo_23.jpg" /></a></div>
+						<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图2</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="{%$URL%}images/lunbo_23.jpg" /></a></div>
+						<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图3</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="{%$URL%}images/lunbo_23.jpg" /></a></div>
+						<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图4</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="{%$URL%}images/lunbo_23.jpg" /></a></div>
+						<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图5</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="{%$URL%}images/lunbo_23.jpg" /></a></div>
+						<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图6</a></div>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+			</div>
+			<script type="text/javascript">
+		jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:4,trigger:"click"});
+		</script>
+		</div>
+
+	</div>
+	<div class="gywm">
+		<div class="gywm_bor">
+				{%lcmx_danye_show set="列表名:show,编号:9,栏目:10"%}
+			<div class="gywm_img"><!-- <img src="{%$show.pic%}" height="288px" width="100%" alt=""> -->
+					 {%lcmx_banner_list set="列表名:banner,分类:2"%}
+					<div id="slideBox1" class="slideBox1">
+						<div class="bd1">
+							<ul>
+						{%if $banner%}
+                        {%foreach from=$banner item=list%}
+								<li><a href="#" target="_blank"><img src="{%$list.pic%}" /></a></li>
+						{%/foreach%}
+                        {%/if%}
+							</ul>
+						</div>
+
+						<!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+
+					</div>
+
+					<script type="text/javascript">
+					jQuery(".slideBox1").slide({mainCell:".bd1 ul",autoPlay:true});
+					</script>
+
+			</div>
+			<div class="gywm_conver">
+				<div class="gywm_titlebo">
+				
+					<div class="t1"><span>{%$show.lc_title%}</span>about us</div>
+					<div class="t2"></div>
+				</div>
+				<div style="height:215px;width:100%;padding-top:15px;margin-bottom:15px;color:#3c3c3c;font-size:14px;line-height:25px;position: relative;overflow:hidden;">
+					{%$show.con%}
+
+				</div>
+				<p style="text-align:right;"><a href="index.php?p=about&lanmu=10&id=9" style="color:red;">查看更多</a></p>
+			</div>
+		</div>
+	</div>
+
+	{%include file='bot.htm'%}
+</body>
+</html>

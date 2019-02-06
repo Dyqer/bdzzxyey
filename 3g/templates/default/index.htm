@@ -1,0 +1,226 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link href="{%$URL%}style/webstyle.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="{%$URL%}style/nav.css" />
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="{%$URL%}js/jquery.toTop.min.js"></script>
+<!-- <script src="{%$URL%}js/velocity.min.js"></script> -->
+<!-- <script src="{%$URL%}js/main.js"></script> -->
+<script src="http://apps.bdimg.com/libs/jquery-lazyload/1.9.5/jquery.lazyload.js"></script>
+<title>{%$LCMX.touch_name%}</title>
+</head>
+
+<body style="max-width:640px;margin:0 auto;">
+
+<!--header start-->
+{%include file="head_top.htm"%}
+<!--header end--> 
+
+<!--index start-->
+
+<section class="top_list">
+  <ul>
+    <li id="a1" style="left:-50%; opacity:0"> <a href="index.php?p=about&lanmu=3">
+      <div class="top_list_t">走进公司</div>
+      <img src="{%$URL%}images/pic1.jpg"> </a></li>
+    <li id="a2" style="right:-50%;opacity:0;"> <a href="index.php?p=about&lanmu=7">
+      <div class="top_list_t">百度推广</div>
+      <img src="{%$URL%}images/pic2.jpg"> </a></li>
+    <li id="a3" style="left:-50%;opacity:0"> <a href="index.php?p=about&lanmu=8">
+      <div class="top_list_t">网站建设</div>
+      <img src="{%$URL%}images/pic3.jpg"></a> </li>
+    <li id="a4" style="right:-50%;opacity:0;"> <a href="index.php?p=about&lanmu=9">
+      <div class="top_list_t">联系我们</div>
+      <img src="{%$URL%}images/pic4.jpg"> </a></li>
+    <div class="cl"></div>
+  </ul>
+</section>
+<section class="product" id="com_nr">
+  <div class="com_title"><a href="index.php?p=about&lanmu=3">公司简介</a></div>
+  <div class="company">
+  {%lcmx_3g_danye_show set="列表名:show,编号:7"%}
+    <div class="com_pic"><img src="{%$show.pic%}"></div>
+    {%$show.con%}</div>
+    
+    <div class="com_more"><a href="index.php?p=about&lanmu=3">更多</a></div>
+</section>
+<section class="news" id="news_list">
+  <div class="news_title"><a href="index.php?p=news_list&lanmu=1">新闻中心</a></div>
+  <ul>
+  
+  
+  {%lcmx_3g_news_list set="列表名:news,显示数目:4,标题长度:12,栏目:1"%}
+    {%$i=1%}
+     {%foreach from=$news item=list%}
+        <li id="n{%$i%}" style="position:relative;{%if $i%2==1%}left{%else%}right{%/if%}:-50%;opacity:0"><a href="index.php?p=news_show&id={%$list.id%}&lanmu=1">{%$list.title%}</a>  {%$list.lc_datetime|date_format:"%m-%d"%}</li>
+         <!--{%$i++%}-->
+     {%/foreach%}
+
+  </ul>
+  <div class="news_more2"><a href="index.php?p=news_list&lanmu=1">更多</a></div>
+</section>
+<section class="product" id="pro_list">
+  <div class="pro_title"><a href="index.php?p=products_list&lanmu=2" >产品展示</a></div>
+  <ul class="pro_nr">
+    <!-- <li><a href="#">
+      <div style="position:relative;height:65px;padding:35px 0 0 0;">
+        <div style="position:absolute;left:0;top:0;z-index:999"><img src="images/pic5.jpg" height="120"></div>
+        <div class="line-scale">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="pro_text">产品展示</div>
+      </a> </li>-->
+      
+     {%lcmx_3g_products_list set="列表名:products,显示数目:4,栏目:2,标题长度:12,推荐:1"%}
+        {%foreach from=$products item=list%}
+    <li>
+    <div class="pro_nr_pic">
+        <a href="index.php?p=products_show&id={%$list.id%}&lanmu=2"><img src="" class="lazy" data-original="{%$list.big_pic%}" alt="{%$list.lc_title%}" width="100%"  >  </a></div>
+        	<div class="pro_text">{%$list.title%}</div>
+       
+        
+    </li>
+  {%/foreach%} 
+      
+    <div class="cl"></div>
+  </ul>
+  <div class="pro_more"><a href="index.php?p=products_list&lanmu=2">更多</a></div>
+</section>
+
+<!--index end--> 
+
+<!--footer start-->
+{%include file="foot.htm"%}
+
+<script type="text/javascript"> 
+ 
+$(document).ready(function() { 
+$("img").lazyload({ 
+effect: "fadeIn"
+}); 
+}); 
+
+</script>
+
+<script> 
+
+window.onload = function(){
+ $("#a1").animate({
+      left: "0%",
+     opacity:"1",
+    },600);
+  $("#a2").animate({
+      right: "0%",
+     opacity:"1",
+    },600);
+	 $("#a3").animate({
+      left: "0%",
+     opacity:"1",
+    },800);
+	 $("#a4").animate({
+      right: "0%",
+     opacity:"1",
+    },800);
+}
+$(document).ready(function(){
+	
+		$(".search").click(function(){
+			if($(".ss").width()==0){
+				$(".ss").animate({width:'100%'});
+			}
+			else
+			{
+				$(".ss").animate({width:'0%'});
+			}
+		});
+ });
+ 
+$(window).scroll(function(){
+		var docViewTop = $(window).scrollTop(),
+			win_h = $(window).height();
+		console.log(docViewTop)
+		console.log($("#news_list").offset().top);
+			if(docViewTop>=($("#news_list").offset().top-400))
+			
+			{
+	$("#n1").animate({
+      left: "0%",
+     opacity:"1",
+    },700);
+    $("#n2").animate({
+      right: "0%",
+     opacity:"1",
+    },800);
+	 $("#n3").animate({
+      left: "0%",
+     opacity:"1",
+    },900);
+	 $("#n4").animate({
+      right: "0%",
+     opacity:"1",
+    },1000);
+	
+	$(".news_more2").addClass('news_more1');
+	
+		}else {
+			
+	 $("#n1").animate({
+      left: "-50%",
+     opacity:"0",
+    },0);
+    $("#n2").animate({
+      right: "-50%",
+     opacity:"0",
+    },0);
+	 $("#n3").animate({
+      left: "-50%",
+     opacity:"0",
+    },0);
+	 $("#n4").animate({
+      right: "-50%",
+     opacity:"0",
+    },0);	
+    }
+
+if(docViewTop>=($("#pro_list").offset().top-400))
+			
+			{
+	$(".pro_nr li").addClass('pro_zz');
+	$(".pro_more").addClass('news_more1');
+	
+		}else {
+	$(".pro_nr li").removeClass('pro_zz');
+	
+    }
+	
+	
+	if(docViewTop>=($("#com_nr").offset().top-400))
+			
+			{
+	$(".company").addClass('com_tm');
+	$(".com_more").addClass('news_more1');
+		}else {
+	$(".company").removeClass('com_tm');
+	
+    }
+
+ });
+
+function getheight(ojb) {
+	return $("#"+ojb).height();
+}
+console.log(getheight("news_list")); 
+
+</script> 
+
+<!--footer end-->
+</body>
+</html>

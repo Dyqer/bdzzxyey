@@ -1,0 +1,136 @@
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.banner').each(function() {
+  var $showPic =$(this).find('.bannerxList li');
+  var $btonBox=$(this).find('.bannerxBton');
+  var _n=0;
+  var _vt=3000;
+  var _vf=2000;
+  var timer;
+  //生成角标
+  for(i=1;i<=$showPic.length;i++){
+    $btonBox.append('<li>'+'</li>');
+  }
+  var $btonList=$btonBox.children('li');
+  //鼠标事件
+  $btonList.each(function(e){
+      $(this).hover(function(){
+        clearInterval(timer);
+        showImg(e);
+        _n=e;
+      },function(){
+        timer = setInterval(auto,_vt);
+      });
+    });
+  //图片轮换
+  var showImg= function(n){
+    $showPic.eq(n).fadeIn(_vf).siblings().fadeOut();
+    $btonList.eq(n).addClass('up').siblings().removeClass('up');
+    
+  }
+  //自动播放
+  var auto=function(){
+    showImg(_n);
+    _n++
+    if(_n == $showPic.length){_n=0;}
+  }
+  timer = setInterval(auto,_vt);
+  showImg(_n);
+  _n++;
+
+  });
+
+});
+        
+      </script>
+<div class="nav" name="aaaaa">
+  <div class="nav_a_a_a" style=";" class="con_a_a"><img src="{%$URL%}images/login.png" alt=""></div>
+	<ul>
+    
+		 {%lcmx_nav_list set="列表名:nav,类别:0,标题长度:80"%}
+        {%if $nav%}
+        {%foreach from=$nav item=menu%}
+        <li><a href="{%$menu.link%}" target="{%$menu.target%}" name="aa">{%$menu.title%}</a> {%lcmx_nav_list set="列表名:nav,类别:{%$menu.lc_id%},标题长度:80"%}
+          <!-- {%if $nav%} 
+          <ul>
+              {%foreach from=$nav item=submenu%}
+            <li><a href="{%$submenu.link%}" target="{%$submenu.target%}">{%$submenu.title%}</a></li>
+              {%/foreach%}
+          </ul> 
+          {%/if%}  --></li>
+        {%/foreach%}
+        {%else%}暂无导航{%/if%}
+	</ul>
+</div>
+
+<div class="banner">
+         <div class="bannerx">
+            <ul class="bannerxList">
+                  {%lcmx_banner_list set="列表名:banner,分类:1"%}
+                        {%if $banner%}
+                        {%foreach from=$banner item=list%}
+                         <li><a href="javascript:void(0)"><img src="{%$list.pic%}" /></a></li>
+                        {%/foreach%}
+                        {%/if%}
+                         <!-- <li style="background:red;"><a href="javascript:void(0)"><img src="images/002.png" /></a></li>
+                         <li style="background:#000;"><a href="javascript:void(0)"><img src="images/003.png" /></a></li> -->
+            </ul>
+            <div class="bannerxBtonbox">
+                <ul class="bannerxBton">
+                </ul>
+            </div>
+        </div>
+
+</div>
+    </div>
+     <script>
+          $(document).ready(function(){
+
+               
+
+
+
+              // $(".banner_QQ").toggle(
+              //   $(".banner_QQ_div").show();
+              //   function()
+              //   {
+              //        $(".banner_QQ_div").show();
+              //   },
+              //   function()
+              //   {
+                   
+              //       $(".banner_QQ_div").hide();
+              //   }
+              // );
+
+              // $(".banner_DH").toggle(
+              //    $(".banner_DH_div").show();
+              //   function()
+              //   {
+              //      $(".banner_DH_div").show();
+                    
+              //   }.
+              //   function()
+              //   {
+              //      $(".banner_DH_div").hide();
+              //   }
+              // );
+
+          });
+        </script> 
+        
+        
+    <script type="text/javascript">
+
+ $(function(){
+          var wid=$(window).width();
+          var he=wid/1900*566;
+          $(".bannerx").css("height",he);
+          $(".bannerxBox").css("height",he);
+          $(".bannerxBox").css("width",wid);
+          $(".bannerxBox").css("margin","0 auto");
+          $(".bannerxList li a img").css("width",wid);
+          $(".bannerxList li a img").css("height",he);
+          //alert(wid);
+        })
+</script>

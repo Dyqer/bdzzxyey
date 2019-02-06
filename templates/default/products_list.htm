@@ -1,0 +1,56 @@
+<!doctype html>
+	{%lcmx_products_type_get set="列表名:tshow,类别:GET[c_id],栏目:GET[lanmu]"%}
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="{%$show.description%}">
+	<meta name="keywords" content="{%$show.keywords%}">
+	<title>{%$web_name%}</title>
+	<link rel="stylesheet" href="{%$URL%}style.css">
+	<script type="text/javascript" src="{%$URL%}js/jquery-1.11.3.js"></script> 
+</head>
+<body>
+	{%include file='herder.htm'%}
+	<div class="currency_fl">
+		<div class="currency_bor">当前位置：<a href="index.php">首页</a> > <a href="index.php?p=products_list&lanmu={%$tshow.lanmu%}">{%$tshow.lanmuname%}</a> > <a href="index.php?p=products_list&lanmu={%$tshow.lanmu%}&c_id={%$tshow.type%}">{%$tshow.typename%}</a></div>
+	</div>
+	<div class="conver">
+			<div class="Title">
+				<div class="TitleMaxSize">{%$tshow.lanmuname%}</div>
+				<div class="TitleMinSize">about us</div>
+			</div>
+			<div class="currency_type">
+				{%lcmx_products_type set="列表名:productstype,所属栏目:GET[lanmu],所属类别:0"%}
+          			 {%foreach from=$productstype item=list%}
+					<a href="index.php?p=products_list&c_id={%$list.c_id%}&lanmu={%$list.lanmu%}" class="currency_type_lanmu">{%$list.c_title%}</a>
+					 {%/foreach%}
+					<!-- a href="" class="currency_type_lanmu">公司文化</a>
+					<a href="" class="currency_type_lanmu">公司文化</a> -->
+			</div>
+			<div class="about_conver">
+				{%lcmx_products_list set="列表名:products,标题长度:10,类别:GET[c_id],栏目:GET[lanmu],显示数目:3,分页显示:1"%}
+					{%if $products%}
+			      	{%foreach from=$products item=list%}
+					<div class="pro_khallist">
+						<div class="pro_khal_lisibor1"><img src="{%$list.pic%}" width="100%"></div>
+						<a href="index.php?p=products_show&id={%$list.lc_id%}&lanmu={%$list.lanmu%}&c_id={%$list.c_id%}"><div class="pro_khal_lisibora"></div></a>
+						<div class="cl"></div>
+						<div class="pro_khal_lisiconver">
+							<p>{%$list.title%}</p>
+							<span>
+							</span>
+						</div>
+					</div>
+					{%/foreach%}
+			      	
+			        {%else%} 
+			            暂无该类图文！
+			        {%/if%}
+					<div class="cl"></div>
+					<div class="main_page" id="page" style="margin-bottom:10px;"><ul>{%$page%}</ul></div>
+			</div>
+	</div>
+	<div class="cl"></div>
+		{%include file='bot.htm'%}
+</body>
+</html>

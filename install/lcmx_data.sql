@@ -1,0 +1,11 @@
+/*Data for the table `mx_config` */
+
+INSERT  INTO `mx_config`(`lc_id`,`lc_name`,`lc_value`) VALUES (1,'partner',''),(2,'key',''),(3,'seller_email ',''),(4,'program_schema',''),(5,'have_phone','0'),(6,'root_url','/mx3.3/'),(7,'web_name','MX5.0'),(8,'web_keywords','MX5.0'),(9,'web_description','MX5.0'),(10,'email_port','465'),(15,'gbook_email_come','0'),(16,'gbook_email_go','0'),(17,'email_zt','qq'),(18,'email_user',''),(19,'email_password',''),(20,'job_email_come','0'),(21,'job_email_go','1'),(23,'x_eid',''),(24,'x_uid',''),(25,'x_pwd_md5',''),(29,'job_duanxin_come','0'),(30,'gbook_duanxin_come','0'),(31,'x_target_no',''),(32,'pc_big_width','600'),(33,'pc_big_height','0'),(34,'pc_small_width','220'),(35,'pc_small_height','0'),(36,'sj_big_width','300'),(37,'sj_big_height','0'),(38,'sj_small_width','120'),(39,'sj_small_height','0'),(40,'web_keywords','MX5.0'),(41,'pc_big_cut','0'),(42,'pc_small_cut','0'),(43,'sj_big_cut','0'),(44,'sj_small_cut','0');
+
+/*Data for the table `mx_dibu` */
+
+INSERT  INTO `mx_dibu`(`lc_id`,`lc_content`) VALUES (1,'<div id=\"botbj\">\r\n	<div id=\"bot\">\r\n<div id=\"fot\">\r\n<p>\r\n地址：黑龙江省哈尔滨市道里区尚志大街29号\r\n			</p>\r\n			<p>\r\n				咨询热线：400-622-8811\r\n			</p>\r\n\r\n		</div>\r\n	</div>\r\n</div>'),(2,'<p>\r\n	<strong>友情链接：</strong> <a href=\"http://www.longcai.com\" target=\"_blank\">龙采集团</a> <a href=\"http://www.longcai.com\" target=\"_blank\">山西龙采</a></p>\r\n'),(3,'<p>\r\n	<!-- 填写企业qq代码 --></p>\r\n'),(4,'1'),(5,'../uploadfile/73965_20140610082627.png');
+
+/*Data for the table `mx_lanmu` */
+
+INSERT  INTO `mx_lanmu`(`c_id`,`c_title`,`c_type`,`c_content`,`c_link`,`c_sort_id`,`c_delete`,`c_pc`,`c_phone`,`c_phone_name`,`c_zt`) VALUES (1,'新闻中心',1,'','index.php?p=news_list&lanmu=1',1,1,1,1,'新闻中心',1),(2,'精彩案例',2,'','index.php?p=products_list&lanmu=2',2,1,1,1,'精彩案例',1),(3,'走进公司',0,'','index.php?p=about&lanmu=3',3,1,1,1,'走进公司',1),(4,'下载中心',3,'','index.php?p=down_list&lanmu=4',4,1,1,0,'下载中心',1),(5,'在线招聘',4,'','index.php?p=job_list&lanmu=5',5,1,1,0,'在线招聘',1),(6,'留言列表',5,'','index.php?p=gbook&lanmu=6',6,1,1,0,'留言列表',1);
